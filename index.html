@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Peasant Character Sheets</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <!-- Controls -->
+  <div class="controls">
+    <button id="randomize">Generate New Peasants</button>
+    <button id="exportPDF">Export to PDF</button>
+    <label>
+      <input type="checkbox" id="lineageToggle" />
+      Optional Lineage Rules
+    </label>
+  </div>
+  
+  <!-- Container for Four Sheets (2x2 grid) -->
+  <div class="sheets-container">
+    <!-- Sheet 1 -->
+    <div class="character-sheet">
+      <div class="character-number-box">
+        <input type="number" class="character-number" name="characterNumber" value="1" min="1" readonly />
+      </div>
+      <div class="top-row">
+        <div class="first-row">
+          <div class="field">
+            <label>Name</label>
+            <input type="text" class="name" name="name" />
+          </div>
+          <div class="field">
+            <label>Alignment</label>
+            <input type="text" class="alignment" name="alignment" readonly />
+          </div>
+        </div>
+        <div class="second-row">
+          <div class="field">
+            <label>Lineage</label>
+            <input type="text" class="lineage" name="lineage" readonly />
+          </div>
+          <div class="field">
+            <label>Past Life</label>
+            <input type="text" class="past-life" name="past-life" readonly />
+          </div>
+        </div>
+      </div>
+      <div class="hp-row">
+        <label>HP (Current / Max)</label>
+        <input type="text" class="current-hp" name="current-hp" />
+        <input type="text" class="max-hp" name="max-hp" readonly />
+      </div>
+      <div class="stats-section">
+        <div class="attributes">
+          <div>
+            <label>Might</label>
+            <input type="number" class="might" name="might" readonly />
+          </div>
+          <div>
+            <label>Agility</label>
+            <input type="number" class="agility" name="agility" readonly />
+          </div>
+          <div>
+            <label>Intellect</label>
+            <input type="number" class="intellect" name="intellect" readonly />
+          </div>
+          <div>
+            <label>Spirit</label>
+            <input type="number" class="spirit" name="spirit" readonly />
+          </div>
+        </div>
+        <div class="derived-stats">
+          <div>
+            <label>Initiative</label>
+            <input type="text" class="initiative" name="initiative" readonly />
+          </div>
+          <div>
+            <label>Accuracy</label>
+            <input type="text" class="accuracy" name="accuracy" readonly />
+          </div>
+          <div>
+            <label>Guard (Agility + Armor)</label>
+            <input type="number" class="guard" name="guard" />
+          </div>
+          <div>
+            <label>Resist</label>
+            <input type="text" class="resist" name="resist" readonly />
+          </div>
+          <div>
+            <label>Prevail</label>
+            <input type="text" class="prevail" name="prevail" readonly />
+          </div>
+          <div>
+            <label>Tenacity</label>
+            <input type="text" class="tenacity" name="tenacity" readonly />
+          </div>
+        </div>
+        <div class="skills-die">
+          <div>
+            <label>Skill +1</label>
+            <span>+1</span>
+          </div>
+          <div>
+            <label>Skill Die</label>
+            <span>d6</span>
+          </div>
+        </div>
+      </div>
+      <div class="speed-carried">
+        <div class="speed-field">
+          <label>Speed (5 + Agility)</label>
+          <input type="number" class="speed" name="speed" readonly />
+        </div>
+        <div class="carried-items">
+          <label>Carried Items (Equipment)</label>
+          <textarea class="carried-items-text" name="carried-items" rows="3"></textarea>
+        </div>
+      </div>
+      <div class="skills-section">
+        <label>Skills</label>
+        <textarea class="skills" name="skills" rows="3" readonly></textarea>
+        <div class="sparks-shadows">
+          <div class="sparks">
+            <label>Sparks</label>
+            <p>canny | quick | quiet | safe | striking</p>
+          </div>
+          <div class="shadows">
+            <label>Shadows</label>
+            <p>costly | slow | loud | harmful | daunting</p>
+          </div>
+        </div>
+      </div>
+      <div class="weapon-attack-static">
+        <h3>WEAPON ATTACK</h3>
+        <p>VERSATILE ATTACK VS. GUARD | CREATURE</p>
+        <p>HIT <span class="info-spacing"></span> Deal 🗡️🗡️ damage (2d4)</p>
+        <p>SPARK <span class="info-spacing"></span> Confer weapon effect (prone)</p>
+      </div>
+      <div class="lineage-talent">
+        <label>Lineage Talent</label>
+        <div class="lineage-talent-text"></div>
+      </div>
+    </div>
+    
+    <!-- Sheet 2 (same structure as Sheet 1) -->
+    <div class="character-sheet">
+      <div class="character-number-box">
+        <input type="number" class="character-number" name="characterNumber" value="2" min="1" readonly />
+      </div>
+      <div class="top-row">
+        <div class="first-row">
+          <div class="field">
+            <label>Name</label>
+            <input type="text" class="name" name="name" />
+          </div>
+          <div class="field">
+            <label>Alignment</label>
+            <input type="text" class="alignment" name="alignment" readonly />
+          </div>
+        </div>
+        <div class="second-row">
+          <div class="field">
+            <label>Lineage</label>
+            <input type="text" class="lineage" name="lineage" readonly />
+          </div>
+          <div class="field">
+            <label>Past Life</label>
+            <input type="text" class="past-life" name="past-life" readonly />
+          </div>
+        </div>
+      </div>
+      <div class="hp-row">
+        <label>HP (Current / Max)</label>
+        <input type="text" class="current-hp" name="current-hp" />
+        <input type="text" class="max-hp" name="max-hp" readonly />
+      </div>
+      <div class="stats-section">
+        <div class="attributes">
+          <div>
+            <label>Might</label>
+            <input type="number" class="might" name="might" readonly />
+          </div>
+          <div>
+            <label>Agility</label>
+            <input type="number" class="agility" name="agility" readonly />
+          </div>
+          <div>
+            <label>Intellect</label>
+            <input type="number" class="intellect" name="intellect" readonly />
+          </div>
+          <div>
+            <label>Spirit</label>
+            <input type="number" class="spirit" name="spirit" readonly />
+          </div>
+        </div>
+        <div class="derived-stats">
+          <div>
+            <label>Initiative</label>
+            <input type="text" class="initiative" name="initiative" readonly />
+          </div>
+          <div>
+            <label>Accuracy</label>
+            <input type="text" class="accuracy" name="accuracy" readonly />
+          </div>
+          <div>
+            <label>Guard (Agility + Armor)</label>
+            <input type="number" class="guard" name="guard" />
+          </div>
+          <div>
+            <label>Resist</label>
+            <input type="text" class="resist" name="resist" readonly />
+          </div>
+          <div>
+            <label>Prevail</label>
+            <input type="text" class="prevail" name="prevail" readonly />
+          </div>
+          <div>
+            <label>Tenacity</label>
+            <input type="text" class="tenacity" name="tenacity" readonly />
+          </div>
+        </div>
+        <div class="skills-die">
+          <div>
+            <label>Skill +1</label>
+            <span>+1</span>
+          </div>
+          <div>
+            <label>Skill Die</label>
+            <span>d6</span>
+          </div>
+        </div>
+      </div>
+      <div class="speed-carried">
+        <div class="speed-field">
+          <label>Speed (5 + Agility)</label>
+          <input type="number" class="speed" name="speed" readonly />
+        </div>
+        <div class="carried-items">
+          <label>Carried Items (Equipment)</label>
+          <textarea class="carried-items-text" name="carried-items" rows="3"></textarea>
+        </div>
+      </div>
+      <div class="skills-section">
+        <label>Skills</label>
+        <textarea class="skills" name="skills" rows="3" readonly></textarea>
+        <div class="sparks-shadows">
+          <div class="sparks">
+            <label>Sparks</label>
+            <p>canny | quick | quiet | safe | striking</p>
+          </div>
+          <div class="shadows">
+            <label>Shadows</label>
+            <p>costly | slow | loud | harmful | daunting</p>
+          </div>
+        </div>
+      </div>
+      <div class="weapon-attack-static">
+        <h3>WEAPON ATTACK</h3>
+        <p>VERSATILE ATTACK VS. GUARD | CREATURE</p>
+        <p>HIT <span class="info-spacing"></span> Deal 🗡️🗡️ damage (2d4)</p>
+        <p>SPARK <span class="info-spacing"></span> Confer weapon effect (prone)</p>
+      </div>
+      <div class="lineage-talent">
+        <label>Lineage Talent</label>
+        <div class="lineage-talent-text"></div>
+      </div>
+    </div>
+    
+    <!-- Sheet 3 -->
+    <div class="character-sheet">
+      <div class="character-number-box">
+        <input type="number" class="character-number" name="characterNumber" value="3" min="1" readonly />
+      </div>
+      <div class="top-row">
+        <div class="first-row">
+          <div class="field">
+            <label>Name</label>
+            <input type="text" class="name" name="name" />
+          </div>
+          <div class="field">
+            <label>Alignment</label>
+            <input type="text" class="alignment" name="alignment" readonly />
+          </div>
+        </div>
+        <div class="second-row">
+          <div class="field">
+            <label>Lineage</label>
+            <input type="text" class="lineage" name="lineage" readonly />
+          </div>
+          <div class="field">
+            <label>Past Life</label>
+            <input type="text" class="past-life" name="past-life" readonly />
+          </div>
+        </div>
+      </div>
+      <div class="hp-row">
+        <label>HP (Current / Max)</label>
+        <input type="text" class="current-hp" name="current-hp" />
+        <input type="text" class="max-hp" name="max-hp" readonly />
+      </div>
+      <div class="stats-section">
+        <div class="attributes">
+          <div>
+            <label>Might</label>
+            <input type="number" class="might" name="might" readonly />
+          </div>
+          <div>
+            <label>Agility</label>
+            <input type="number" class="agility" name="agility" readonly />
+          </div>
+          <div>
+            <label>Intellect</label>
+            <input type="number" class="intellect" name="intellect" readonly />
+          </div>
+          <div>
+            <label>Spirit</label>
+            <input type="number" class="spirit" name="spirit" readonly />
+          </div>
+        </div>
+        <div class="derived-stats">
+          <div>
+            <label>Initiative</label>
+            <input type="text" class="initiative" name="initiative" readonly />
+          </div>
+          <div>
+            <label>Accuracy</label>
+            <input type="text" class="accuracy" name="accuracy" readonly />
+          </div>
+          <div>
+            <label>Guard (Agility + Armor)</label>
+            <input type="number" class="guard" name="guard" />
+          </div>
+          <div>
+            <label>Resist</label>
+            <input type="text" class="resist" name="resist" readonly />
+          </div>
+          <div>
+            <label>Prevail</label>
+            <input type="text" class="prevail" name="prevail" readonly />
+          </div>
+          <div>
+            <label>Tenacity</label>
+            <input type="text" class="tenacity" name="tenacity" readonly />
+          </div>
+        </div>
+        <div class="skills-die">
+          <div>
+            <label>Skill +1</label>
+            <span>+1</span>
+          </div>
+          <div>
+            <label>Skill Die</label>
+            <span>d6</span>
+          </div>
+        </div>
+      </div>
+      <div class="speed-carried">
+        <div class="speed-field">
+          <label>Speed (5 + Agility)</label>
+          <input type="number" class="speed" name="speed" readonly />
+        </div>
+        <div class="carried-items">
+          <label>Carried Items (Equipment)</label>
+          <textarea class="carried-items-text" name="carried-items" rows="3"></textarea>
+        </div>
+      </div>
+      <div class="skills-section">
+        <label>Skills</label>
+        <textarea class="skills" name="skills" rows="3" readonly></textarea>
+        <div class="sparks-shadows">
+          <div class="sparks">
+            <label>Sparks</label>
+            <p>canny | quick | quiet | safe | striking</p>
+          </div>
+          <div class="shadows">
+            <label>Shadows</label>
+            <p>costly | slow | loud | harmful | daunting</p>
+          </div>
+        </div>
+      </div>
+      <div class="weapon-attack-static">
+        <h3>WEAPON ATTACK</h3>
+        <p>VERSATILE ATTACK VS. GUARD | CREATURE</p>
+        <p>HIT <span class="info-spacing"></span> Deal 🗡️🗡️ damage (2d4)</p>
+        <p>SPARK <span class="info-spacing"></span> Confer weapon effect (prone)</p>
+      </div>
+      <div class="lineage-talent">
+        <label>Lineage Talent</label>
+        <div class="lineage-talent-text"></div>
+      </div>
+    </div>
+    
+    <!-- Sheet 4 -->
+    <div class="character-sheet">
+      <div class="character-number-box">
+        <input type="number" class="character-number" name="characterNumber" value="4" min="1" readonly />
+      </div>
+      <div class="top-row">
+        <div class="first-row">
+          <div class="field">
+            <label>Name</label>
+            <input type="text" class="name" name="name" />
+          </div>
+          <div class="field">
+            <label>Alignment</label>
+            <input type="text" class="alignment" name="alignment" readonly />
+          </div>
+        </div>
+        <div class="second-row">
+          <div class="field">
+            <label>Lineage</label>
+            <input type="text" class="lineage" name="lineage" readonly />
+          </div>
+          <div class="field">
+            <label>Past Life</label>
+            <input type="text" class="past-life" name="past-life" readonly />
+          </div>
+        </div>
+      </div>
+      <div class="hp-row">
+        <label>HP (Current / Max)</label>
+        <input type="text" class="current-hp" name="current-hp" />
+        <input type="text" class="max-hp" name="max-hp" readonly />
+      </div>
+      <div class="stats-section">
+        <div class="attributes">
+          <div>
+            <label>Might</label>
+            <input type="number" class="might" name="might" readonly />
+          </div>
+          <div>
+            <label>Agility</label>
+            <input type="number" class="agility" name="agility" readonly />
+          </div>
+          <div>
+            <label>Intellect</label>
+            <input type="number" class="intellect" name="intellect" readonly />
+          </div>
+          <div>
+            <label>Spirit</label>
+            <input type="number" class="spirit" name="spirit" readonly />
+          </div>
+        </div>
+        <div class="derived-stats">
+          <div>
+            <label>Initiative</label>
+            <input type="text" class="initiative" name="initiative" readonly />
+          </div>
+          <div>
+            <label>Accuracy</label>
+            <input type="text" class="accuracy" name="accuracy" readonly />
+          </div>
+          <div>
+            <label>Guard (Agility + Armor)</label>
+            <input type="number" class="guard" name="guard" />
+          </div>
+          <div>
+            <label>Resist</label>
+            <input type="text" class="resist" name="resist" readonly />
+          </div>
+          <div>
+            <label>Prevail</label>
+            <input type="text" class="prevail" name="prevail" readonly />
+          </div>
+          <div>
+            <label>Tenacity</label>
+            <input type="text" class="tenacity" name="tenacity" readonly />
+          </div>
+        </div>
+        <div class="skills-die">
+          <div>
+            <label>Skill +1</label>
+            <span>+1</span>
+          </div>
+          <div>
+            <label>Skill Die</label>
+            <span>d6</span>
+          </div>
+        </div>
+      </div>
+      <div class="speed-carried">
+        <div class="speed-field">
+          <label>Speed (5 + Agility)</label>
+          <input type="number" class="speed" name="speed" readonly />
+        </div>
+        <div class="carried-items">
+          <label>Carried Items (Equipment)</label>
+          <textarea class="carried-items-text" name="carried-items" rows="3"></textarea>
+        </div>
+      </div>
+      <div class="skills-section">
+        <label>Skills</label>
+        <textarea class="skills" name="skills" rows="3" readonly></textarea>
+        <div class="sparks-shadows">
+          <div class="sparks">
+            <label>Sparks</label>
+            <p>canny | quick | quiet | safe | striking</p>
+          </div>
+          <div class="shadows">
+            <label>Shadows</label>
+            <p>costly | slow | loud | harmful | daunting</p>
+          </div>
+        </div>
+      </div>
+      <div class="weapon-attack-static">
+        <h3>WEAPON ATTACK</h3>
+        <p>VERSATILE ATTACK VS. GUARD | CREATURE</p>
+        <p>HIT <span class="info-spacing"></span> Deal 🗡️🗡️ damage (2d4)</p>
+        <p>SPARK <span class="info-spacing"></span> Confer weapon effect (prone)</p>
+      </div>
+      <div class="lineage-talent">
+        <label>Lineage Talent</label>
+        <div class="lineage-talent-text"></div>
+      </div>
+    </div>
+  </div>
+  
+  <!-- Main JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
+  <script src="main.js"></script>
+</body>
+</html>

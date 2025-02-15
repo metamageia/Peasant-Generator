@@ -1,0 +1,242 @@
+/* Basic resets */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+    background: #f7f7f7;
+}
+
+/* Ensure all elements use border-box sizing */
+* {
+    box-sizing: border-box;
+}
+
+/* Controls styling */
+.controls {
+    text-align: center;
+    margin: 20px;
+}
+.controls button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+/* Main container for the character sheet */
+.character-sheet {
+    width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    background: #fff;
+    border: 2px solid #333;
+    box-shadow: 0 0 10px rgba(0,0,0,0.2);
+    display: grid;
+    grid-template-columns: 200px 1fr;
+    grid-gap: 10px;
+}
+
+/* Character Number Box */
+.character-number-box {
+    grid-column: 1;
+    grid-row: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 2px solid #333;
+    padding: 10px;
+    justify-content: center;
+}
+.character-number-box input {
+    width: 70px;
+    text-align: center;
+    font-size: 2rem;
+    font-weight: bold;
+    border: none;
+    background-color: transparent;
+}
+
+/* Top Row Fields */
+.top-row {
+    grid-column: 2;
+    display: grid;
+    grid-template-rows: auto auto;
+    grid-gap: 10px;
+}
+.top-row .first-row,
+.top-row .second-row {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+}
+.top-row .field {
+    display: flex;
+    flex-direction: column;
+}
+.top-row label {
+    font-weight: bold;
+    font-size: 0.9em;
+}
+.top-row input {
+    padding: 4px;
+    width: 100%;
+}
+
+/* Hit Points Row */
+.hp-row {
+    grid-column: 1 / span 2;
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+}
+.hp-row label {
+    font-weight: bold;
+    margin-right: 10px;
+}
+.hp-row input {
+    padding: 4px;
+    margin-right: 10px;
+    width: 100px;
+}
+
+/* Stats Section */
+.stats-section {
+    grid-column: 1 / span 2;
+    display: grid;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-gap: 10px;
+    margin-top: 10px;
+}
+.attributes, .derived-stats, .skills-die {
+    border: 1px solid #ccc;
+    padding: 10px;
+    display: grid;
+    grid-gap: 5px;
+}
+.attributes label, .derived-stats label, .skills-die label {
+    font-weight: bold;
+    font-size: 0.8em;
+}
+.attributes input, .derived-stats input, .skills-die span {
+    width: 100%;
+    padding: 4px;
+}
+
+/* Speed & Carried Items */
+.speed-carried {
+    grid-column: 1 / span 2;
+    display: grid;
+    grid-template-columns: 100px 1fr;
+    grid-gap: 10px;
+    margin-top: 10px;
+}
+.speed-field {
+    display: flex;
+    flex-direction: column;
+}
+.speed-field label {
+    font-weight: bold;
+}
+.speed-field input {
+    padding: 4px;
+    width: 100%;
+}
+.carried-items {
+    display: flex;
+    flex-direction: column;
+}
+.carried-items label {
+    font-weight: bold;
+}
+.carried-items textarea {
+    padding: 4px;
+    width: 100%;
+    resize: vertical;
+}
+
+/* Skills Section */
+.skills-section {
+    grid-column: 1 / span 2;
+    display: flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+.skills-section label {
+    font-weight: bold;
+}
+.skills-section textarea {
+    padding: 4px;
+    width: 100%;
+    resize: vertical;
+}
+
+/* Sparks & Shadows */
+.sparks-shadows {
+    display: flex;
+    margin-top: 10px;
+}
+.sparks, .shadows {
+    margin-right: 20px;
+}
+.sparks label, .shadows label {
+    font-weight: bold;
+    display: block;
+    margin-bottom: 5px;
+}
+
+/* Weapon Attack Section */
+.weapon-attack-static {
+    grid-column: 1 / span 2;
+    margin-top: 10px;
+    border: 1px solid #ccc;
+    padding: 10px;
+}
+.weapon-attack-static h3 {
+    margin: 0 0 5px 0;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+.weapon-attack-static p {
+    margin: 4px 0;
+}
+.info-spacing {
+    display: inline-block;
+    width: 30px;
+}
+
+/* Lineage Talent */
+.lineage-talent {
+    grid-column: 1 / span 2;
+    margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+}
+.lineage-talent label {
+    font-weight: bold;
+}
+.lineage-talent-text {
+    padding: 4px;
+    width: 100%;
+    min-height: 2em;
+    border: 1px solid #ccc;
+    background: #f9f9f9;
+}
+
+/* Sheets Container */
+.sheets-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 20px;
+    margin: 20px;
+}
+
+/* Remove border for read-only fields */
+input[readonly],
+textarea[readonly] {
+    border: none;
+    background-color: transparent;
+}
+input.name, input.guard {
+    border: none;
+    background-color: transparent;
+}

@@ -1,0 +1,1225 @@
+{
+  "lineage": [
+    { "name": "Human", "weight": 3 },
+    { "name": "Dwarf", "weight": 1 },
+    { "name": "Elf", "weight": 1 },
+    { "name": "Orc", "weight": 1 }
+  ],
+  "lineageTalents": {
+    "Human": "Human Ingenuity: On the first maneuver you attempt each encounter, gain one extra spark on a success.",
+    "Elf": "Elven Tranquility: You gain an extra point of focus at the start of combat, for a total of INTELLECT + I. You gain this extra point even at first level. Once per combat encounter, when you make an accuracy check, you can spend a point of focus to add your skill die to the roll.",
+    "Dwarf": "Dwarven Resolve: You start each adventuring day with one point of resolve.",
+    "Orc": "The Curse of Ruin: Orcs are the unmakers of all things they touch. When you make a depletion check, the item depletes on a result of 1 to 3 instead of 1 to 2. When you make a check to destroy an object, you gain an extra spark on a success. When you deal damage with an attack, you may choose to reroll the lowest die."
+  },
+  "firstSyllable": [
+    "Ad", "Ae", "Aer", "Ai", "Alde", "Am", "An", "Ang", "Ard", "Bel",
+    "Bern", "Blan", "Blem", "Blin", "Bor", "Brad", "Bran", "Bre", "Bril",
+    "Cad", "Cal", "Can", "Cor", "Da", "Dey", "Dis", "Doy", "Du", "Ei", "En",
+    "Er", "Ey", "Fan", "Fel", "Fid", "Fir", "Flan", "Fley", "Fli", "Flin",
+    "Flon", "Fol", "Frel", "Frin", "Ful", "Gam", "Gil", "Gol", "Gran", "Grel",
+    "Grey", "Grin", "Gris", "Gro", "Gron", "Gun", "Ilde", "Jal", "Jel", "Jen",
+    "Jir", "Jol", "Jor", "Ked", "Kel", "Kem", "Ken", "Kran", "Kren", "Kron",
+    "Lar", "Lin", "Lun", "Lur", "Mar", "Mir", "Mor", "Mur", "My", "Nes", "Nob",
+    "Nod", "Nosh", "Nu", "Nur", "Ny", "Om", "Or", "Oy", "Par", "Per", "Phar",
+    "Phul", "Po", "Pol", "Pral", "Pran", "Prey", "Que", "Qued", "Quel", "Quil",
+    "Quon", "Ram", "Ran", "Ren", "Rey", "Ris", "Rold", "Roy", "San", "Sar",
+    "Sar", "Ser", "Shel", "Sho", "Sor", "Tad", "Tal", "Tan", "Tar", "Tash",
+    "Tef", "Tel", "Ten", "Tes", "Tev", "Than", "Then", "Thi", "Thil", "Thin",
+    "Tho", "Thon", "Throm", "Thum", "Tir", "Tor", "Tris", "Tur", "Twen", "Twey",
+    "Twi", "Ul", "Ulde", "Van", "Vel", "Ven", "Ver", "Vis", "Vol", "War", "Wed",
+    "Wel", "Wen", "Wil", "Win", "Yan", "Yar", "Yu", "Yen", "Yil", "Yom", "Zan",
+    "Zar", "Zer", "Zon", "Od", "Os", "On", "In", "Ru", "Ro", "Tu", "Mu", "Ne",
+    "Bu", "Bi", "Bo"
+  ],
+  "secondSyllable": [
+    "a", "ae", "ai", "al", "an", "ar", "as", "ath", "ay", "ben", "ber",
+    "bon", "da", "de", "del", "den", "dern", "di", "di", "do", "du", "e",
+    "ea", "el", "el", "en", "en", "eo", "er", "es", "ey", "i", "ia", "id",
+    "il", "il", "im", "in", "ir", "is", "ka", "ki", "ko", "ku", "o", "om",
+    "on", "on", "ono", "or", "os", "oth", "ra", "re", "ri", "ru", "sa", "sa",
+    "si", "si", "so", "so", "su", "ta", "te", "ti", "to", "tu", "u", "ul",
+    "um", "un", "ur", "va", "ve", "vi", "vo", "wan", "wen", "wer", "za", "zi",
+    "zo", "zu"
+  ],
+  "thirdSyllable": [
+    "ald", "alt", "ane", "ar", "ar", "arn", "ash", "ast", "bald", "ban",
+    "bar", "bell", "bil", "blin", "bin", "bold", "oth", "brad", "da", "dack",
+    "dane", "danne", "darc", "dast", "delle", "dern", "dest", "dey", "dian",
+    "dith", "dock", "don", "don", "donne", "dor", "doth", "dram", "drick",
+    "drim", "drum", "eck", "el", "em", "ean", "ello", "eon", "eph", "ern",
+    "est", "eth", "fast", "fir", "firth", "hash", "ian", "ick", "iff", "il",
+    "il", "ill", "im", "in", "in", "ine", "ing", "inn", "iol", "ion", "ir",
+    "ith", "ius", "lack", "lan", "lash", "last", "len", "len", "lew", "ley",
+    "lick", "lir", "lir", "list", "lock", "lock", "lod", "lon", "lor", "los",
+    "lot", "loth", "low", "mal", "mast", "mel", "mir", "mock",
+    "iol", "ion", "ir", "ith", "ius", "lack", "lan", "lash", "last", "len",
+    "len", "lew", "ley", "lick", "lir", "lir", "list", "lock", "lock", "lod",
+    "lon", "lor", "los", "lot", "loth", "low", "mal", "mast", "mel", "mir",
+    "mock", "mus", "nard", "nast", "nel", "nir", "nius", "nob", "nock", "nod",
+    "nosh", "noth", "nus", "ob", "or", "orn", "os", "osh", "ost", "oth", "ots",
+    "peth", "rad", "ran", "oel", "rath", "reck", "relle", "rend", "rey", "rick",
+    "ril", "rin", "rist", "rith", "rius", "roc", "rock", "rod", "rom", "ros",
+    "esse", "roth", "ster", "stor", "ta", "tain", "tan", "tash", "task", "tast",
+    "tel", "tem", "ten", "ten", "ias", "till", "tir", "tish", "ton", "tor",
+    "tos", "tram", "trim", "tris", "then", "tha", "this", "thea", "ule", "vane",
+    "vel", "ven", "vil", "vir", "vock", "vost", "wald", "ward", "weld", "werd",
+    "west", "wick", "win", "ock"
+  ],
+  "alignment": [
+    { "name": "[vice] & [vice]", "weight": 1 },
+    { "name": "[vice] & [oddity]", "weight": 1 },
+    { "name": "[virtue] & [vice]", "weight": 6 },
+    { "name": "[virtue] & [oddity]", "weight": 1 },
+    { "name": "[virtue] & [virtue]", "weight": 1 }
+  ],
+  "virtue": [
+    "Calm", "Daring", "Thoughtful", "Dutiful", "Generous", "Honest",
+    "Supportive", "Humble", "Kind", "Trusting"
+  ],
+  "vice": [
+    "Wrathful", "Cowardly", "Impulsive", "Unruly", "Greedy", "Deceitful",
+    "Envious", "Arrogant", "Cruel", "Paranoid"
+  ],
+  "oddity": [
+    "Obsessive", "Whimsical", "Anarchic", "Gentle", "Destructive", "Callous",
+    "Slothful", "Stoic", "Steadfast", "Imperious", "Eloquent", "Delusional",
+    "Loyal", "Tense", "Curious", "Cheerful", "Altruistic", "Observant",
+    "Jaded", "Capricious", "Sarcastic", "Seductive", "Clumsy", "Regal",
+    "Haunted", "Prideful", "Imaginative", "Nonchalant", "Servile",
+    "Fair-Minded", "Heartless", "Ambitious", "Crude", "Self-Righteous"
+  ],
+  "socialGroupWeights": [
+    { "name": "outcasts", "weight": 3 },
+    { "name": "laborers", "weight": 3 },
+    { "name": "farmers", "weight": 3 },
+    { "name": "artisans", "weight": 3 },
+    { "name": "merchants", "weight": 3 },
+    { "name": "soldiers", "weight": 2 },
+    { "name": "servants", "weight": 2 },
+    { "name": "nobility", "weight": 1 }
+  ],
+  "socialGroups": {
+    "outcasts": [
+      {
+        "name": "Hermit",
+        "abilityBonus": { "Spirit": 1 },
+        "skill": "Nature",
+        "equipment": "moonshine"
+      },
+      {
+        "name": "Leper",
+        "abilityBonus": { "Spirit": 1 },
+        "skill": "Stealth",
+        "equipment": "crude cloak (1d6)"
+      },
+      {
+        "name": "Urchin",
+        "abilityBonus": { "Agility": 1 },
+        "skill": "Stealth",
+        "equipment": "stuffed animal"
+      },
+      {
+        "name": "Poacher",
+        "abilityBonus": { "Agility": 1 },
+        "skill": "Perception",
+        "equipment": "bag of hides"
+      },
+      {
+        "name": "Beggar",
+        "abilityBonus": { "Spirit": 1 },
+        "skill": "Folklore",
+        "equipment": "tin cup, 5 cp"
+      },
+      {
+        "name": "Charlatan",
+        "abilityBonus": { "Spirit": 1 },
+        "skill": "Speech",
+        "equipment": "snake oil"
+      },
+      {
+        "name": "Graverobber",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Perception",
+        "equipment": "rusted shovel"
+      },
+      {
+        "name": "Fraud",
+        "abilityBonus": { "Intellect": 1 },
+        "skill": "Letters",
+        "equipment": "quill, ink, paper"
+      },
+      {
+        "name": "Gambler",
+        "abilityBonus": { "Intellect": 1 },
+        "skill": "Speech",
+        "equipment": "dice"
+      },
+      {
+        "name": "Pickpocket",
+        "abilityBonus": { "Agility": 1 },
+        "skill": "Stealth",
+        "equipment": "keys to unknown door"
+      },
+      {
+        "name": "Arsonist",
+        "abilityBonus": { "Intellect": 1 },
+        "skill": "Athletics",
+        "equipment": "firebomb (deals 3d6 damage in a spread 2)"
+      },
+      {
+        "name": "Drunkard",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Speech",
+        "equipment": "empty tankard"
+      },
+      {
+        "name": "Outlaw",
+        "abilityBonus": { "Agility": 1 },
+        "skill": "Stealth",
+        "equipment": "stolen jewelry"
+      },
+      {
+        "name": "Expelled Acolyte",
+        "abilityBonus": { "Intellect": 1 },
+        "skill": "Letters",
+        "equipment": "holy texts (unread)"
+      },
+      {
+        "name": "Failed Apprentice",
+        "abilityBonus": { "Intellect": 1 },
+        "skill": "Magic",
+        "equipment": "stolen spellbook, random scholarly incantation (p.163)"
+      },
+      {
+        "name": "Lockpicker",
+        "abilityBonus": { "Agility": 1 },
+        "skill": "Tinkering",
+        "equipment": "lockpicks"
+      },
+      {
+        "name": "Vigilante",
+        "abilityBonus": { "Agility": 1, "Spirit": 1 },
+        "skill": "Perception",
+        "equipment": "cloak (L/+0/d6)"
+      },
+      {
+        "name": "Doomsayer",
+        "abilityBonus": { "Intellect": 1, "Spirit": 1 },
+        "skill": "Magic",
+        "equipment": "manifesto"
+      },
+      {
+        "name": "Burglar",
+        "abilityBonus": { "Agility": 1, "Intellect": 1 },
+        "skill": "Stealth",
+        "equipment": "crowbar"
+      },
+      {
+        "name": "Pig Thief",
+        "abilityBonus": { "Might": 1, "Agility": 1 },
+        "skill": "Stealth",
+        "equipment": "pig"
+      }
+    ],
+    "laborers": [
+      {
+        "name": "Gongfarmer",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Nature",
+        "equipment": "dung shovel"
+      },
+      {
+        "name": "Scavenger",
+        "abilityBonus": { "Agility": 1 },
+        "skill": "Tinkering",
+        "equipment": "crude helm (L/+1/d6)"
+      },
+      {
+        "name": "Chimney Sweep",
+        "abilityBonus": { "Agility": 1 },
+        "skill": "Athletics",
+        "equipment": "bag of limes"
+      },
+      {
+        "name": "Lamplighter",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Acrobatics",
+        "equipment": "rope"
+      },
+      {
+        "name": "Carver",
+        "abilityBonus": { "Agility": 1 },
+        "skill": "Nature",
+        "equipment": "sextant"
+      },
+      {
+        "name": "Roofer",
+        "abilityBonus": { "Agility": 1 },
+        "skill": "Acrobatics",
+        "equipment": "ten-foot ladder (heavy)"
+      },
+      {
+        "name": "Ferry Keeper",
+        "abilityBonus": { "Intellect": 1 },
+        "skill": "Folklore",
+        "equipment": "broken oar"
+      },
+      {
+        "name": "Boatwright",
+        "abilityBonus": { "Intellect": 1 },
+        "skill": "Tinkering",
+        "equipment": "hammer and nails"
+      },
+      {
+        "name": "Ragpicker",
+        "abilityBonus": { "Spirit": 1 },
+        "skill": "Stealth",
+        "equipment": "chipped shovel"
+      },
+      {
+        "name": "Stable Hand",
+        "abilityBonus": { "Agility": 1 },
+        "skill": "Nature",
+        "equipment": "push broom"
+      },
+      {
+        "name": "Stonemason",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Crafting",
+        "equipment": "hammer and chisel"
+      },
+      {
+        "name": "Stable Keeper",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Nature",
+        "equipment": "sack of horseshoes"
+      },
+      {
+        "name": "Polisher",
+        "abilityBonus": { "Agility": 1 },
+        "skill": "Perception",
+        "equipment": "silver knife (as dagger)"
+      },
+      {
+        "name": "Wagoner",
+        "abilityBonus": { "Agility": 1 },
+        "skill": "Folklore",
+        "equipment": "tattered scarf, tricorn hat"
+      },
+      {
+        "name": "Thatcher",
+        "abilityBonus": { "Agility": 1 },
+        "skill": "Acrobatics",
+        "equipment": "bag of thatch"
+      },
+      {
+        "name": "Miner",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Athletics",
+        "equipment": "pickaxe"
+      },
+      {
+        "name": "Woodcutter",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Nature",
+        "equipment": "old axe"
+      },
+      {
+        "name": "Tavern Guard",
+        "abilityBonus": { "Might": 1, "Spirit": 1 },
+        "skill": "Folklore",
+        "equipment": "cudgel (1d6)"
+      },
+      {
+        "name": "Gravedigger",
+        "abilityBonus": { "Might": 1, "Spirit": 1 },
+        "skill": "Athletics",
+        "equipment": "tombstone"
+      },
+      {
+        "name": "Rat-Catcher",
+        "abilityBonus": { "Agility": 1, "Intellect": 1 },
+        "skill": "Stealth",
+        "equipment": "rat-bashing stick"
+      }
+    ],
+    "farmers": [
+      {
+        "name": "Cabbage Farmer",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Athletics",
+        "equipment": "bag of cabbages"
+      },
+      {
+        "name": "Carrot Farmer",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Athletics",
+        "equipment": "bag of carrots"
+      },
+      {
+        "name": "Onion Farmer",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Athletics",
+        "equipment": "bag of onions"
+      },
+      {
+        "name": "Wheat Farmer",
+        "abilityBonus": { "Agility": 1 },
+        "skill": "Athletics",
+        "equipment": "scythe (weapon)"
+      },
+      {
+        "name": "Herbalist",
+        "abilityBonus": { "Intellect": 1 },
+        "skill": "Nature",
+        "equipment": "bag of herbs"
+      },
+      {
+        "name": "Forager",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Nature",
+        "equipment": "pouch of berries"
+      },
+      {
+        "name": "Miller",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Athletics",
+        "equipment": "bag of flour"
+      },
+      {
+        "name": "Chicken Farmer",
+        "abilityBonus": { "Agility": 1 },
+        "skill": "Acrobatics",
+        "equipment": "chicken"
+      },
+      {
+        "name": "Shepherd",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Perception",
+        "equipment": "bag of wool"
+      },
+      {
+        "name": "Cowherd",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Nature",
+        "equipment": "cattle prod"
+      },
+      {
+        "name": "Swineherd",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Nature",
+        "equipment": "slop bucket, slop"
+      },
+      {
+        "name": "Fowler",
+        "abilityBonus": { "Agility": 1 },
+        "skill": "Acrobatics",
+        "equipment": "quail eggs"
+      },
+      {
+        "name": "Butter Churner",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Athletics",
+        "equipment": "butter churn"
+      },
+      {
+        "name": "Fisher",
+        "abilityBonus": { "Spirit": 1 },
+        "skill": "Nature",
+        "equipment": "rod and tackle"
+      },
+      {
+        "name": "Horse Trainer",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Nature",
+        "equipment": "bag of carrots"
+      },
+      {
+        "name": "Beekeeper",
+        "abilityBonus": { "Spirit": 1 },
+        "skill": "Nature",
+        "equipment": "queen in a jar"
+      },
+      {
+        "name": "Trapper",
+        "abilityBonus": { "Intellect": 1 },
+        "skill": "Tinkering",
+        "equipment": "iron bear trap"
+      },
+      {
+        "name": "Hound Keeper",
+        "abilityBonus": { "Might": 1, "Spirit": 1 },
+        "skill": "Nature",
+        "equipment": "puppy"
+      },
+      {
+        "name": "Hunter",
+        "abilityBonus": { "Might": 1, "Agility": 1 },
+        "skill": "Stealth",
+        "equipment": "bow (weapon)"
+      },
+      {
+        "name": "Falconer",
+        "abilityBonus": { "Agility": 1, "Spirit": 1 },
+        "skill": "Nature",
+        "equipment": "trained falcon"
+      }
+    ],
+    "artisans": [
+      {
+        "name": "Carpenter",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Crafting",
+        "equipment": "woodworking tools"
+      },
+      {
+        "name": "Cobbler",
+        "abilityBonus": { "Spirit": 1 },
+        "skill": "Tinkering",
+        "equipment": "boots (1d6)"
+      },
+      {
+        "name": "Wood-Carver",
+        "abilityBonus": { "Agility": 1 },
+        "skill": "Crafting",
+        "equipment": "carving of a squirrel"
+      },
+      {
+        "name": "Glassblower",
+        "abilityBonus": { "Agility": 1 },
+        "skill": "Crafting",
+        "equipment": "1d6 glass vials"
+      },
+      {
+        "name": "Leather-Worker",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Crafting",
+        "equipment": "2 material"
+      },
+      {
+        "name": "Cook",
+        "abilityBonus": { "Spirit": 1 },
+        "skill": "Alchemy",
+        "equipment": "cookware"
+      },
+      {
+        "name": "Weaver",
+        "abilityBonus": { "Agility": 1 },
+        "skill": "Crafting",
+        "equipment": "quilt"
+      },
+      {
+        "name": "Locksmith",
+        "abilityBonus": { "Agility": 1 },
+        "skill": "Tinkering",
+        "equipment": "simple lock and key"
+      },
+      {
+        "name": "Brewer",
+        "abilityBonus": { "Spirit": 1 },
+        "skill": "Nature",
+        "equipment": "small keg of ale"
+      },
+      {
+        "name": "Soap-Maker",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Alchemy",
+        "equipment": "bag of soap bars"
+      },
+      {
+        "name": "Tailor",
+        "abilityBonus": { "Agility": 1 },
+        "skill": "Crafting",
+        "equipment": "well-maintained outfit"
+      },
+      {
+        "name": "Tinker",
+        "abilityBonus": { "Intellect": 1 },
+        "skill": "Tinkering",
+        "equipment": "wind-up toy"
+      },
+      {
+        "name": "Candle-Maker",
+        "abilityBonus": { "Spirit": 1 },
+        "skill": "Alchemy",
+        "equipment": "huge ceremonial candle"
+      },
+      {
+        "name": "Fletcher",
+        "abilityBonus": { "Agility": 1 },
+        "skill": "Crafting",
+        "equipment": "bundle of arrows"
+      },
+      {
+        "name": "Baker",
+        "abilityBonus": { "Spirit": 1 },
+        "skill": "Alchemy",
+        "equipment": "loaf of bread"
+      },
+      {
+        "name": "Butcher",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Nature",
+        "equipment": "meat cleaver (1d6)"
+      },
+      {
+        "name": "Barber",
+        "abilityBonus": { "Agility": 1 },
+        "skill": "Speech",
+        "equipment": "shaving razors"
+      },
+      {
+        "name": "Inventor",
+        "abilityBonus": { "Intellect": 1, "Spirit": 1 },
+        "skill": "Crafting",
+        "equipment": "bundle of notes"
+      },
+      {
+        "name": "Jeweler",
+        "abilityBonus": { "Agility": 1, "Intellect": 1 },
+        "skill": "Tinkering",
+        "equipment": "tray of semi-precious gems"
+      },
+      {
+        "name": "Blacksmith",
+        "abilityBonus": { "Might": 1, "Spirit": 1 },
+        "skill": "Crafting",
+        "equipment": "hammer"
+      }
+    ],
+    "merchants": [
+      {
+        "name": "Fence",
+        "abilityBonus": { "Intellect": 1 },
+        "skill": "Magic",
+        "equipment": "box of stolen junk"
+      },
+      {
+        "name": "Salvage Dealer",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Tinkering",
+        "equipment": "broken sword hilt"
+      },
+      {
+        "name": "Relic Peddler",
+        "abilityBonus": { "Spirit": 1 },
+        "skill": "Folklore",
+        "equipment": "fake relics"
+      },
+      {
+        "name": "Wine Merchant",
+        "abilityBonus": { "Intellect": 1 },
+        "skill": "Nature",
+        "equipment": "bottle of lowland red"
+      },
+      {
+        "name": "Street Hawker",
+        "abilityBonus": { "Intellect": 1 },
+        "skill": "Speech",
+        "equipment": "arrow-shaped sign"
+      },
+      {
+        "name": "Bird Seller",
+        "abilityBonus": { "Spirit": 1 },
+        "skill": "Perception",
+        "equipment": "fine plumes"
+      },
+      {
+        "name": "Fishmonger",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Athletics",
+        "equipment": "rod and tackle"
+      },
+      {
+        "name": "Cheesemonger",
+        "abilityBonus": { "Spirit": 1 },
+        "skill": "Nature",
+        "equipment": "bucket of cheeses"
+      },
+      {
+        "name": "Fortune Teller",
+        "abilityBonus": { "Spirit": 1 },
+        "skill": "Magic",
+        "equipment": "fortune-telling cards"
+      },
+      {
+        "name": "Tavern Server",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Folklore",
+        "equipment": "serving platter"
+      },
+      {
+        "name": "Pie Seller",
+        "abilityBonus": { "Spirit": 1 },
+        "skill": "Perception",
+        "equipment": "basket of meat pies"
+      },
+      {
+        "name": "Florist",
+        "abilityBonus": { "Spirit": 1 },
+        "skill": "Nature",
+        "equipment": "basket of flowers"
+      },
+      {
+        "name": "Cartographer",
+        "abilityBonus": { "Intellect": 1 },
+        "skill": "Letters",
+        "equipment": "scroll case with map"
+      },
+      {
+        "name": "Spice Merchant",
+        "abilityBonus": { "Intellect": 1 },
+        "skill": "Nature",
+        "equipment": "spice box"
+      },
+      {
+        "name": "Shopkeeper",
+        "abilityBonus": { "Spirit": 1 },
+        "skill": "Speech",
+        "equipment": "dusty ledger"
+      },
+      {
+        "name": "Bookseller",
+        "abilityBonus": { "Intellect": 1 },
+        "skill": "Letters",
+        "equipment": "tome on a useful subject"
+      },
+      {
+        "name": "Moneylender",
+        "abilityBonus": { "Intellect": 1 },
+        "skill": "Letters",
+        "equipment": "pouch of silver pieces"
+      },
+      {
+        "name": "Apothecary",
+        "abilityBonus": { "Intellect": 1, "Spirit": 1 },
+        "skill": "Nature",
+        "equipment": "satchel of herbs"
+      },
+      {
+        "name": "Perfumer",
+        "abilityBonus": { "Agility": 1, "Spirit": 1 },
+        "skill": "Perception",
+        "equipment": "fine perfume"
+      },
+      {
+        "name": "Innkeeper",
+        "abilityBonus": { "Might": 1, "Intellect": 1 },
+        "skill": "Speech",
+        "equipment": "bottle of black whisky"
+      }
+    ],
+    "soldiers": [
+      {
+        "name": "Deserter",
+        "abilityBonus": { "Spirit": 1 },
+        "skill": "Stealth",
+        "equipment": "rusted helm (d6)"
+      },
+      {
+        "name": "Mercenary",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Stealth",
+        "equipment": "crude sword (d6)"
+      },
+      {
+        "name": "Bodyguard",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Perception",
+        "equipment": "crude crossbow (d6)"
+      },
+      {
+        "name": "Town Guard",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Perception",
+        "equipment": "crude flail (d6)"
+      },
+      {
+        "name": "Catchpole",
+        "abilityBonus": { "Intellect": 1 },
+        "skill": "Athletics",
+        "equipment": "broken catchpole"
+      },
+      {
+        "name": "Jailer",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Perception",
+        "equipment": "set of keys"
+      },
+      {
+        "name": "Executioner",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Athletics",
+        "equipment": "crude greataxe (d8)"
+      },
+      {
+        "name": "Sheriff",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Perception",
+        "equipment": "crude crossbow (d8)"
+      },
+      {
+        "name": "Scout",
+        "abilityBonus": { "Agility": 1 },
+        "skill": "Perception",
+        "equipment": "forest-green cloak (L/+0/d6)"
+      },
+      {
+        "name": "Messenger",
+        "abilityBonus": { "Agility": 1 },
+        "skill": "Letters",
+        "equipment": "bag of undelivered letters"
+      },
+      {
+        "name": "Foot Soldier",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Athletics",
+        "equipment": "round shield (+2/d6)"
+      },
+      {
+        "name": "Rider",
+        "abilityBonus": { "Agility": 1 },
+        "skill": "Nature",
+        "equipment": "saddle bag"
+      },
+      {
+        "name": "Flag-Bearer",
+        "abilityBonus": { "Spirit": 1 },
+        "skill": "Speech",
+        "equipment": "tattered banner (counts as staff)"
+      },
+      {
+        "name": "Siege Engineer",
+        "abilityBonus": { "Intellect": 1 },
+        "skill": "Tinkering",
+        "equipment": "unfinished schematic"
+      },
+      {
+        "name": "Sapper",
+        "abilityBonus": { "Intellect": 1 },
+        "skill": "Tinkering",
+        "equipment": "grenade (deals 3d6 in a blast 3)"
+      },
+      {
+        "name": "Archer",
+        "abilityBonus": { "Agility": 1 },
+        "skill": "Perception",
+        "equipment": "shortbow (d6)"
+      },
+      {
+        "name": "Sergeant",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Athletics",
+        "equipment": "child's drawing"
+      },
+      {
+        "name": "Herald",
+        "abilityBonus": { "Might": 1, "Spirit": 1 },
+        "skill": "Letters",
+        "equipment": "brass horn"
+      },
+      {
+        "name": "Lieutenant",
+        "abilityBonus": { "Might": 1, "Intellect": 1 },
+        "skill": "Speech",
+        "equipment": "medal of honor"
+      },
+      {
+        "name": "Captain",
+        "abilityBonus": { "Might": 1, "Spirit": 1 },
+        "skill": "Letters",
+        "equipment": "helm (L/+1/d8)"
+      }
+    ],
+    "servants": [
+      {
+        "name": "Teacher",
+        "abilityBonus": { "Intellect": 1 },
+        "skill": "Letters",
+        "equipment": "history book"
+      },
+      {
+        "name": "Minstrel",
+        "abilityBonus": { "Spirit": 1 },
+        "skill": "Speech",
+        "equipment": "book of sagas"
+      },
+      {
+        "name": "Dancer",
+        "abilityBonus": { "Agility": 1 },
+        "skill": "Acrobatics",
+        "equipment": "dancing shoes"
+      },
+      {
+        "name": "Singer",
+        "abilityBonus": { "Spirit": 1 },
+        "skill": "Speech",
+        "equipment": "whistle"
+      },
+      {
+        "name": "Tax Collector",
+        "abilityBonus": { "Spirit": 1 },
+        "skill": "Letters",
+        "equipment": "empty coffer"
+      },
+      {
+        "name": "Physician",
+        "abilityBonus": { "Intellect": 1 },
+        "skill": "Alchemy",
+        "equipment": "medicine bag"
+      },
+      {
+        "name": "Gardener",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Nature",
+        "equipment": "gardening hoe"
+      },
+      {
+        "name": "Chef",
+        "abilityBonus": { "Intellect": 1 },
+        "skill": "Alchemy",
+        "equipment": "kitchen knife (as dagger)"
+      },
+      {
+        "name": "Mortician",
+        "abilityBonus": { "Intellect": 1 },
+        "skill": "Letters",
+        "equipment": "autopsy kit"
+      },
+      {
+        "name": "Pilgrim",
+        "abilityBonus": { "Spirit": 1 },
+        "skill": "Folklore",
+        "equipment": "holy text"
+      },
+      {
+        "name": "Librarian",
+        "abilityBonus": { "Intellect": 1 },
+        "skill": "Letters",
+        "equipment": "tome on a useless subject"
+      },
+      {
+        "name": "Thespian",
+        "abilityBonus": { "Spirit": 1 },
+        "skill": "Speech",
+        "equipment": "makeup kit"
+      },
+      {
+        "name": "Circus Performer",
+        "abilityBonus": { "Agility": 1 },
+        "skill": "Acrobatics",
+        "equipment": "hoop"
+      },
+      {
+        "name": "Pigeon Fancier",
+        "abilityBonus": { "Intellect": 1 },
+        "skill": "Nature",
+        "equipment": "pigeon in a cage"
+      },
+      {
+        "name": "Painter",
+        "abilityBonus": { "Spirit": 1 },
+        "skill": "Perception",
+        "equipment": "brush and paints"
+      },
+      {
+        "name": "Philosopher",
+        "abilityBonus": { "Intellect": 1 },
+        "skill": "Letters",
+        "equipment": "treatise on ethics"
+      },
+      {
+        "name": "Astrologer",
+        "abilityBonus": { "Intellect": 1 },
+        "skill": "Magic",
+        "equipment": "chart of the cosmos"
+      },
+      {
+        "name": "Spy",
+        "abilityBonus": { "Agility": 1, "Intellect": 1 },
+        "skill": "Stealth",
+        "equipment": "stolen letters"
+      },
+      {
+        "name": "Poet",
+        "abilityBonus": { "Intellect": 1, "Spirit": 1 },
+        "skill": "Letters",
+        "equipment": "binder of notes"
+      },
+      {
+        "name": "Jester",
+        "abilityBonus": { "Agility": 1, "Spirit": 1 },
+        "skill": "Acrobatics",
+        "equipment": "jester's cap (L/+0/d4)"
+      }
+    ],
+    "nobility": [
+      {
+        "name": "Lady / Lord",
+        "abilityBonus": { "Might": 1, "Agility": 1, "Spirit": 1 },
+        "skill": "Letters",
+        "equipment": "noble equipage",
+        "entryWeight": 4
+      },
+      {
+        "name": "Duchess / Duke",
+        "abilityBonus": { "Might": 1, "Intellect": 1, "Spirit": 1 },
+        "skill": "Letters",
+        "equipment": "noble equipage",
+        "entryWeight": 4
+      },
+      {
+        "name": "Countess / Count",
+        "abilityBonus": { "Agility": 1, "Intellect": 1, "Spirit": 1 },
+        "skill": "Letters",
+        "equipment": "noble equipage",
+        "entryWeight": 4
+      },
+      {
+        "name": "Baroness / Baron",
+        "abilityBonus": { "Might": 1, "Agility": 1, "Intellect": 1 },
+        "skill": "Letters",
+        "equipment": "noble equipage",
+        "entryWeight": 4
+      },
+      {
+        "name": "Princess / Prince",
+        "abilityBonus": { "Might": 1, "Agility": 1, "Intellect": 1, "Spirit": 1 },
+        "skill": "Letters, Speech",
+        "equipment": "noble equipage",
+        "entryWeight": 2
+      },
+      {
+        "name": "Queen / King",
+        "abilityBonus": { "Might": 1, "Agility": 1, "Intellect": 1, "Spirit": 1 },
+        "skill": "Letters, Speech",
+        "equipment": "noble equipage",
+        "entryWeight": 2
+      }
+    ]
+  },
+  "lineagePastLives": {
+    "Elf": [
+      {
+        "name": "Moondancer",
+        "abilityBonus": { "Spirit": 1 },
+        "skill": "Acrobatics",
+        "equipment": "moon frog extract (instills delirious 2)"
+      },
+      {
+        "name": "Rejuviant",
+        "abilityBonus": { "Spirit": 1 },
+        "skill": "Alchemy",
+        "equipment": "potion of healing (grants a recovery 2)"
+      },
+      {
+        "name": "Branchwalker",
+        "abilityBonus": { "Agility": 1 },
+        "skill": "Athletics",
+        "equipment": "leaf-woven boots (L/+0/d6)"
+      },
+      {
+        "name": "Silversmith",
+        "abilityBonus": { "Agility": 1 },
+        "skill": "Crafting",
+        "equipment": "silverworking tools"
+      },
+      {
+        "name": "Legendarian",
+        "abilityBonus": { "Spirit": 1 },
+        "skill": "Folklore",
+        "equipment": "mahogony lyre, scroll of stories"
+      },
+      {
+        "name": "Archivist",
+        "abilityBonus": { "Intellect": 1 },
+        "skill": "Letters",
+        "equipment": "tome in old elvish on a random subject"
+      },
+      {
+        "name": "Ritualist",
+        "abilityBonus": { "Intellect": 1 },
+        "skill": "Magic",
+        "equipment": "ancient ritual ingredient in rosewood box (one of a kind)"
+      },
+      {
+        "name": "Grovetender",
+        "abilityBonus": { "Spirit": 1 },
+        "skill": "Nature",
+        "equipment": "book of pressed flowers"
+      },
+      {
+        "name": "Sentinel",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Perception",
+        "equipment": "silver spyglass with dragonfly wing lenses"
+      },
+      {
+        "name": "Councilor",
+        "abilityBonus": { "Intellect": 1 },
+        "skill": "Speech",
+        "equipment": "flower-thread mantle (L/+0/d8)"
+      },
+      {
+        "name": "Wood Stalker",
+        "abilityBonus": { "Agility": 1 },
+        "skill": "Stealth",
+        "equipment": "shortbow (d6, missile 8, two-handed, confer slow 2)"
+      },
+      {
+        "name": "Reliquarian",
+        "abilityBonus": { "Intellect": 1 },
+        "skill": "Tinkering",
+        "equipment": "scrying glass (shows a specific unknown location in real time)"
+      }
+    ],
+    "Dwarf": [
+      {
+        "name": "Spelunker",
+        "abilityBonus": { "Agility": 1 },
+        "skill": "Acrobatics",
+        "equipment": "rope and grappling hook"
+      },
+      {
+        "name": "Chirurgeon",
+        "abilityBonus": { "Intellect": 1 },
+        "skill": "Alchemy",
+        "equipment": "potion of cleansing (erases all normal states)"
+      },
+      {
+        "name": "Miner",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Athletics",
+        "equipment": "pickaxe (d8, melee, two-handed, confer bleeding 4)"
+      },
+      {
+        "name": "Metalsmith",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Crafting",
+        "equipment": "metalworking tools"
+      },
+      {
+        "name": "Engraver",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Folklore",
+        "equipment": "fine hammer and chisel"
+      },
+      {
+        "name": "Architect",
+        "abilityBonus": { "Intellect": 1 },
+        "skill": "Letters",
+        "equipment": "schematic (first time planning a building, advance clock by one)"
+      },
+      {
+        "name": "Rune-Reader",
+        "abilityBonus": { "Spirit": 1 },
+        "skill": "Magic",
+        "equipment": "bag of runes (can be consulted on wisdom of present course, not reliable)"
+      },
+      {
+        "name": "Beastmaster",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Nature",
+        "equipment": "handling gloves (H/+1/d6)"
+      },
+      {
+        "name": "Surveyor",
+        "abilityBonus": { "Intellect": 1 },
+        "skill": "Perception",
+        "equipment": "tunnel tuning fork (measures integrity of natural caves)"
+      },
+      {
+        "name": "Merchant",
+        "abilityBonus": { "Spirit": 1 },
+        "skill": "Speech",
+        "equipment": "bag of 100 CP (marked)"
+      },
+      {
+        "name": "Deep Hunter",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Stealth",
+        "equipment": "crude crossbow (d8, missile 10, two-handed, confer bleeding 4)"
+      },
+      {
+        "name": "Gem Cutter",
+        "abilityBonus": { "Agility": 1 },
+        "skill": "Tinkering",
+        "equipment": "gem cutter's tools (as camp activity, improve value of a treasure by 1)"
+      }
+    ],
+    "Orc": [
+      {
+        "name": "Roamer",
+        "abilityBonus": { "Agility": 1 },
+        "skill": "Acrobatics",
+        "equipment": "climbing boots (L/+0/d6)"
+      },
+      {
+        "name": "Soothsayer",
+        "abilityBonus": { "Intellect": 1 },
+        "skill": "Alchemy",
+        "equipment": "potion of invigoration (confers hastened 4)"
+      },
+      {
+        "name": "Caravanner",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Athletics",
+        "equipment": "hauling gloves (M/+1/d8)"
+      },
+      {
+        "name": "Scrap-Cutter",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Crafting",
+        "equipment": "battered crafting tools"
+      },
+      {
+        "name": "Banner-Stitcher",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Folklore",
+        "equipment": "patchwork banner of fallen heraldry"
+      },
+      {
+        "name": "Mapkeeper",
+        "abilityBonus": { "Intellect": 1 },
+        "skill": "Letters",
+        "equipment": "old map to an orcish point of interest in this region"
+      },
+      {
+        "name": "Rhythmist",
+        "abilityBonus": { "Spirit": 1 },
+        "skill": "Magic",
+        "equipment": "set of flat wood ritual drums"
+      },
+      {
+        "name": "Poacher",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Nature",
+        "equipment": "orcish blood dog"
+      },
+      {
+        "name": "Night Sentry",
+        "abilityBonus": { "Agility": 1 },
+        "skill": "Perception",
+        "equipment": "fine lantern and fuel"
+      },
+      {
+        "name": "Helm-Bearer",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Speech",
+        "equipment": "crude great helm (H/+2/d8) denoting chieftain status"
+      },
+      {
+        "name": "Far-Hunter",
+        "abilityBonus": { "Might": 1 },
+        "skill": "Stealth",
+        "equipment": "crude longbow (d8, missile 10, two-handed, confer slow 2)"
+      },
+      {
+        "name": "Horn-Cutter",
+        "abilityBonus": { "Spirit": 1 },
+        "skill": "Tinkering",
+        "equipment": "fine war horn"
+      }
+    ]
+  }
+}
