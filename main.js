@@ -137,6 +137,7 @@ function fetchCommonerData() {
   
   // Update Lineage Talent for all sheets when the toggle changes
   function updateLineageTalent() {
+    generatePeasant();
     const sheets = document.querySelectorAll('.character-sheet');
     sheets.forEach(sheet => {
       const lineage = sheet.querySelector(".lineage").value;
