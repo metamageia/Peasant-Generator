@@ -24,6 +24,14 @@ function fetchCommonerData() {
       .then(response => response.json())
       .then(data => { commonerData = data; });
 }
+
+// Add this helper function to parse name templates
+function generateName(nameTemplate) {
+  // Replace syllable placeholders with actual syllables
+  return nameTemplate.replace(/\[(.*?)\]/g, (match, type) => {
+    return randomFromArray(commonerData[type]);
+  });
+}
   
   // Generate a character for a given sheet element
   function generatePeasantForSheet(sheet) {
@@ -55,9 +63,9 @@ function fetchCommonerData() {
     const alignmentString = firstValue + " & " + secondValue;
     
     // --- Other Character Generation ---
-    const name = randomFromArray(commonerData.firstSyllable) +
-                 randomFromArray(commonerData.secondSyllable) +
-                 randomFromArray(commonerData.thirdSyllable);
+    const nameTemplate = weightedRandom(commonerData.commonerName).name;
+    const generatedName = generateName(nameTemplate);
+    sheet.querySelector(".name").value = generatedName;
     const lineageOption = weightedRandom(commonerData.lineage);
     const lineage = lineageOption.name;
     
@@ -89,7 +97,6 @@ function fetchCommonerData() {
     const speed = 5 + agility;
     
     // Update fields on the sheet
-    sheet.querySelector(".name").value = name;
     sheet.querySelector(".alignment").value = alignmentString;
     sheet.querySelector(".lineage").value = lineage;
     sheet.querySelector(".past-life").value = pastLife;
