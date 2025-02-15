@@ -120,7 +120,7 @@ function fetchCommonerData() {
     if (optionalRulesEnabled) {
       if (commonerData.lineageTalents && commonerData.lineageTalents[lineage]) {
         lineageTalentContainer.style.display = 'flex';
-        lineageTalentContainer.querySelector('.lineage-talent-text').textContent = commonerData.lineageTalents[lineage];
+        lineageTalentContainer.querySelector('.lineage-talent-text').innerHTML = commonerData.lineageTalents[lineage];
       } else {
         lineageTalentContainer.style.display = 'none';
       }
@@ -145,7 +145,7 @@ function fetchCommonerData() {
       if (optionalRulesEnabled) {
         if (commonerData && commonerData.lineageTalents && commonerData.lineageTalents[lineage]) {
           lineageTalentContainer.style.display = 'flex';
-          lineageTalentContainer.querySelector('.lineage-talent-text').textContent = commonerData.lineageTalents[lineage];
+          lineageTalentContainer.querySelector('.lineage-talent-text').innerHTML = commonerData.lineageTalents[lineage];
         } else {
           lineageTalentContainer.style.display = 'none';
         }
