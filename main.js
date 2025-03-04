@@ -34,7 +34,7 @@ function generateName(nameTemplate) {
 }
   
   // Generate a character for a given sheet element
-  function generatePeasantForSheet(sheet) {
+  function generateCommonerForSheet(sheet) {
     if (!commonerData) {
       console.error("commonerData not loaded yet.");
       return;
@@ -62,17 +62,25 @@ function generateName(nameTemplate) {
     }
     const alignmentString = firstValue + " & " + secondValue;
     
+    // --- Lineage Generation ---
+    // Filter lineage options based on the human-only toggle
+    const lineageToggle = document.getElementById("lineageToggleCheckbox");
+    const availableLineages = lineageToggle.checked 
+      ? commonerData.lineage
+      : commonerData.lineage.filter(option => option.name === "Human");
+    
+    const lineageOption = weightedRandom(availableLineages);
+    const lineage = lineageOption.name;
+    
     // --- Other Character Generation ---
     const nameTemplate = weightedRandom(commonerData.commonerName).name;
     const generatedName = generateName(nameTemplate);
     sheet.querySelector(".name").value = generatedName;
-    const lineageOption = weightedRandom(commonerData.lineage);
-    const lineage = lineageOption.name;
     
     // Determine which past life table to roll from:
-    const useLineageToggle = document.getElementById("lineageToggle").checked;
+    const uselineageRulesToggle = document.getElementById("lineageRulesToggle").checked;
     let pastLifeEntry = null;
-    if (useLineageToggle && lineage !== "Human" && commonerData.lineagePastLives && commonerData.lineagePastLives[lineage]) {
+    if (uselineageRulesToggle && lineage !== "Human" && commonerData.lineagePastLives && commonerData.lineagePastLives[lineage]) {
       pastLifeEntry = randomFromArray(commonerData.lineagePastLives[lineage]);
     } else {
       const groupOption = weightedRandom(commonerData.socialGroupWeights);
@@ -123,7 +131,7 @@ function generateName(nameTemplate) {
     
     // Update Lineage Talent based on the toggle.
     const lineageTalentContainer = sheet.querySelector('.lineage-talent');
-    const optionalRulesEnabled = document.getElementById("lineageToggle").checked;
+    const optionalRulesEnabled = document.getElementById("lineageRulesToggle").checked;
     if (optionalRulesEnabled) {
       if (commonerData.lineageTalents && commonerData.lineageTalents[lineage]) {
         lineageTalentContainer.style.display = 'flex';
@@ -137,19 +145,19 @@ function generateName(nameTemplate) {
   }
   
   // Generate characters for all sheets
-  function generatePeasant() {
+  function generateCommoner() {
     const sheets = document.querySelectorAll('.character-sheet');
-    sheets.forEach(sheet => generatePeasantForSheet(sheet));
+    sheets.forEach(sheet => generateCommonerForSheet(sheet));
   }
   
   // Update Lineage Talent for all sheets when the toggle changes
   function updateLineageTalent() {
-    generatePeasant();
+    generateCommoner();
     const sheets = document.querySelectorAll('.character-sheet');
     sheets.forEach(sheet => {
       const lineage = sheet.querySelector(".lineage").value;
       const lineageTalentContainer = sheet.querySelector('.lineage-talent');
-      const optionalRulesEnabled = document.getElementById("lineageToggle").checked;
+      const optionalRulesEnabled = document.getElementById("lineageRulesToggle").checked;
       if (optionalRulesEnabled) {
         if (commonerData && commonerData.lineageTalents && commonerData.lineageTalents[lineage]) {
           lineageTalentContainer.style.display = 'flex';
@@ -167,10 +175,11 @@ function generateName(nameTemplate) {
     document.addEventListener("DOMContentLoaded", () => {
       fetchCommonerData()
         .then(() => {
-          document.getElementById("randomize").addEventListener("click", generatePeasant);
-          document.getElementById("lineageToggle").addEventListener("change", updateLineageTalent);
+          document.getElementById("randomize").addEventListener("click", generateCommoner);
+          document.getElementById("lineageRulesToggle").addEventListener("change", updateLineageTalent);
+          document.getElementById("lineageToggleCheckbox").addEventListener("change", generateCommoner);
           document.getElementById("exportPDF").addEventListener("click", exportToPDF);
-          generatePeasant();
+          generateCommoner();
         })
         .catch(error => console.error("Error loading commonerData:", error));
     });
@@ -180,7 +189,7 @@ function generateName(nameTemplate) {
     const element = document.querySelector('.sheets-container');
     const opt = {
       margin: 3,
-      filename: 'peasant-characters.pdf',
+      filename: 'commoner-characters.pdf',
       image: { type: 'jpeg', quality: 0.98 },
       html2canvas: { 
         scale: 1.2,
@@ -214,10 +223,10 @@ function generateName(nameTemplate) {
   document.addEventListener("DOMContentLoaded", () => {
     fetchCommonerData()
       .then(() => {
-        document.getElementById("randomize").addEventListener("click", generatePeasant);
-        document.getElementById("lineageToggle").addEventListener("change", updateLineageTalent);
+        document.getElementById("randomize").addEventListener("click", generateCommoner);
+        document.getElementById("lineageRulesToggle").addEventListener("change", updateLineageTalent);
         document.getElementById("exportPDF").addEventListener("click", exportToPDF);
-        generatePeasant();
+        generateCommoner();
       })
       .catch(error => console.error("Error loading commonerData:", error));
   });
