@@ -180,7 +180,7 @@ function exportToPDF() {
   const element = document.querySelector('.sheets-container');
   const opt = {
     margin: 3,
-    filename: 'peasant-characters.pdf',
+    filename: 'commoners.pdf',
     image: { type: 'jpeg', quality: 0.98 },
     html2canvas: { 
       scale: 1.2,
