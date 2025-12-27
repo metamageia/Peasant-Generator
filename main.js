@@ -92,9 +92,8 @@ function generatePeasantForSheet(sheet) {
   const accuracy = 1 + Math.max(agility, might);
   const resist = spirit + 1;
   const prevail = intellect + 1;
-  const tenacity = might + spirit;
   const maxHP = 5 + might;
-  const speed = 5 + agility;
+  const speed = 5;
   
   sheet.querySelector(".alignment").value = alignmentString;
   sheet.querySelector(".lineage").value = lineage;
@@ -110,7 +109,6 @@ function generatePeasantForSheet(sheet) {
   sheet.querySelector(".guard").value = agility;
   sheet.querySelector(".resist").value = resist;
   sheet.querySelector(".prevail").value = prevail;
-  sheet.querySelector(".tenacity").value = tenacity;
   
   sheet.querySelector(".max-hp").value = maxHP;
   sheet.querySelector(".speed").value = speed;
