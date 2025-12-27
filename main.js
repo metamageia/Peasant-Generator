@@ -151,6 +151,29 @@ function generatePeasantForSheet(sheet) {
 function generatePeasant() {
   const sheets = document.querySelectorAll('.character-sheet');
   sheets.forEach(sheet => generatePeasantForSheet(sheet));
+  // After values are populated, enforce which fields are interactable
+  enforceInteractivityRules();
+}
+
+// Make generated fields non-interactable (readOnly and removed from tab order)
+// except for HP and inventory which should remain editable.
+function enforceInteractivityRules() {
+  const sheets = document.querySelectorAll('.character-sheet');
+  sheets.forEach(sheet => {
+    const fields = sheet.querySelectorAll('input, textarea');
+    fields.forEach(el => {
+      // Allow editing for current HP and carried items only
+      if (el.classList.contains('current-hp') || el.classList.contains('carried-items-text')) {
+        el.readOnly = false;
+        el.removeAttribute('readonly');
+        el.removeAttribute('tabindex');
+      } else {
+        el.readOnly = true; // mark as read-only so values can't be changed
+        el.setAttribute('readonly', '');
+        el.setAttribute('tabindex', '-1'); // remove from tab order
+      }
+    });
+  });
 }
 
 // Update Lineage Talent for all sheets when the toggle changes

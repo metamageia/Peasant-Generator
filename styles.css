@@ -103,6 +103,16 @@ body {
     width: 100px;
 }
 
+/* Separator between current and max HP */
+.hp-row .hp-sep {
+    display: inline-block;
+    width: 18px;
+    text-align: center;
+    font-weight: bold;
+    margin: 0 4px;
+    user-select: none;
+}
+
 /* Stats Section */
 .stats-section {
     grid-column: 1 / span 2;
@@ -235,12 +245,30 @@ body {
 }
 
 /* Remove border for read-only fields */
+/* Read-only fields should look like plain text and not be interactable */
 input[readonly],
 textarea[readonly] {
     border: none;
     background-color: transparent;
+    pointer-events: none; /* prevent clicking into the control */
+    cursor: default; /* don't show text cursor */
+    user-select: none; /* optional: prevent selection so fields behave like static text */
+    outline: none; /* remove focus outline in case of programmatic focus */
+    padding: 0; /* make them blend with surrounding text */
+    font: inherit;
+    color: inherit;
 }
 input.name, input.guard {
     border: none;
     background-color: transparent;
+}
+
+/* Hide spinner arrows for number fields that are readonly so they appear as text */
+input[type=number][readonly]::-webkit-outer-spin-button,
+input[type=number][readonly]::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+input[type=number][readonly] {
+    -moz-appearance: textfield; /* Firefox */
 }
