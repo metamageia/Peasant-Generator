@@ -847,9 +847,9 @@
         "equipment": "history book"
       },
       {
-        "name": "Minstrel",
+        "name": "Troubadour",
         "abilityBonus": { "Spirit": 1 },
-        "skill": "Speech",
+        "skill": "Folklore",
         "equipment": "book of sagas"
       },
       {
@@ -866,7 +866,7 @@
       },
       {
         "name": "Tax Collector",
-        "abilityBonus": { "Spirit": 1 },
+        "abilityBonus": { "Intellect": 1 },
         "skill": "Letters",
         "equipment": "empty coffer"
       },
@@ -966,42 +966,42 @@
         "name": "Lady / Lord",
         "abilityBonus": { "Might": 1, "Agility": 1, "Spirit": 1 },
         "skill": "Letters",
-        "equipment": "noble equipage",
+        "equipment": "any one mundane weapon; quilted armor (L/+1/d6)",
         "entryWeight": 4
       },
       {
         "name": "Duchess / Duke",
         "abilityBonus": { "Might": 1, "Intellect": 1, "Spirit": 1 },
         "skill": "Letters",
-        "equipment": "noble equipage",
+        "equipment": "any one mundane weapon; quilted armor (L/+1/d6); gilded signet",
         "entryWeight": 4
       },
       {
         "name": "Countess / Count",
         "abilityBonus": { "Agility": 1, "Intellect": 1, "Spirit": 1 },
         "skill": "Letters",
-        "equipment": "noble equipage",
+        "equipment": "any one mundane weapon; quilted armor (L/+1/d6); signet ring",
         "entryWeight": 4
       },
       {
         "name": "Baroness / Baron",
         "abilityBonus": { "Might": 1, "Agility": 1, "Intellect": 1 },
         "skill": "Letters",
-        "equipment": "noble equipage",
+        "equipment": "any one mundane weapon; quilted armor (L/+1/d6); battered crest",
         "entryWeight": 4
       },
       {
         "name": "Princess / Prince",
         "abilityBonus": { "Might": 1, "Agility": 1, "Intellect": 1, "Spirit": 1 },
         "skill": "Letters, Speech",
-        "equipment": "noble equipage",
+        "equipment": "any one mundane weapon; quilted armor (L/+1/d6); battered crown",
         "entryWeight": 2
       },
       {
         "name": "Queen / King",
         "abilityBonus": { "Might": 1, "Agility": 1, "Intellect": 1, "Spirit": 1 },
         "skill": "Letters, Speech",
-        "equipment": "noble equipage",
+        "equipment": "any one mundane weapon; quilted armor (L/+1/d6); battered crown (L/+1/d6)",
         "entryWeight": 2
       }
     ]
