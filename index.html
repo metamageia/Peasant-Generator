@@ -6,6 +6,9 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
+  <!-- Title Bar -->
+  <div class="title-bar">COMMONERS</div>
+
   <!-- Controls -->
   <div class="controls">
     <button id="randomize">Generate New Commoners</button>
@@ -31,21 +34,21 @@
       </div>
       <div class="top-row">
         <div class="first-row">
-          <div class="field">
+          <div class="field name-box">
             <label>Name</label>
             <input type="text" class="name" name="name" />
           </div>
-          <div class="field">
+          <div class="field alignment-box">
             <label>Alignment</label>
             <input type="text" class="alignment" name="alignment" readonly />
           </div>
         </div>
         <div class="second-row">
-          <div class="field">
+          <div class="field lineage-box">
             <label>Lineage</label>
             <input type="text" class="lineage" name="lineage" readonly />
           </div>
-          <div class="field">
+          <div class="field past-life-box">
             <label>Past Life</label>
             <input type="text" class="past-life" name="past-life" readonly />
           </div>
@@ -60,54 +63,54 @@
       <div class="stats-section">
         <div class="attributes">
           <div>
-            <label>Might</label>
+            <label>Might:</label>
             <input type="number" class="might" name="might" readonly />
           </div>
           <div>
-            <label>Agility</label>
+            <label>Agility:</label>
             <input type="number" class="agility" name="agility" readonly />
           </div>
           <div>
-            <label>Intellect</label>
+            <label>Intellect:</label>
             <input type="number" class="intellect" name="intellect" readonly />
           </div>
           <div>
-            <label>Spirit</label>
+            <label>Spirit:</label>
             <input type="number" class="spirit" name="spirit" readonly />
           </div>
         </div>
         <div class="derived-stats">
           <div>
-            <label>Initiative</label>
+            <label>Initiative:</label>
             <input type="text" class="initiative" name="initiative" readonly />
           </div>
           <div>
-            <label>Accuracy</label>
+            <label>Accuracy:</label>
             <input type="text" class="accuracy" name="accuracy" readonly />
           </div>
           <div>
-            <label>Guard (Agility + Armor)</label>
+            <label>Guard (Agility + Armor):</label>
             <input type="number" class="guard" name="guard" />
           </div>
           <div>
-            <label>Resist</label>
+            <label>Resist:</label>
             <input type="text" class="resist" name="resist" readonly />
           </div>
           <div>
-            <label>Prevail</label>
+            <label>Prevail:</label>
             <input type="text" class="prevail" name="prevail" readonly />
           </div>
           <div>
-            <label>Tenacity</label>
+            <label>Tenacity:</label>
             <input type="text" class="tenacity" name="tenacity" readonly />
           </div>
         </div>
-        <div class="skills-die">
-          <div>
+        <div class="skills-die-container">
+          <div class="skill-bonus-box">
             <label>Skill Bonus</label>
             <span>+1</span>
           </div>
-          <div>
+          <div class="skill-die-box">
             <label>Skill Die</label>
             <span>d6</span>
           </div>
@@ -118,23 +121,23 @@
           <label>Speed (5 + Agility)</label>
           <input type="number" class="speed" name="speed" readonly />
         </div>
-        <div class="carried-items">
-          <label>Carried Items (Equipment)</label>
-          <textarea class="carried-items-text" name="carried-items" rows="3"></textarea>
+        <div class="skills-section">
+          <label>Skills</label>
+          <textarea class="skills" name="skills" rows="3" readonly></textarea>
         </div>
       </div>
-      <div class="skills-section">
-        <label>Skills</label>
-        <textarea class="skills" name="skills" rows="3" readonly></textarea>
-        <div class="sparks-shadows">
-          <div class="sparks">
-            <label>Sparks</label>
-            <p>canny | quick | quiet | safe | striking</p>
-          </div>
-          <div class="shadows">
-            <label>Shadows</label>
-            <p>costly | slow | loud | harmful | daunting</p>
-          </div>
+      <div class="carried-items">
+        <label>Carried Items (Equipment)</label>
+        <textarea class="carried-items-text" name="carried-items" rows="3"></textarea>
+      </div>
+      <div class="sparks-shadows">
+        <div class="sparks">
+          <label>Sparks</label>
+          <p>canny | quick | quiet | safe | striking</p>
+        </div>
+        <div class="shadows">
+          <label>Shadows</label>
+          <p>costly | slow | loud | harmful | daunting</p>
         </div>
       </div>
       <div class="weapon-attack-static">
@@ -157,21 +160,21 @@
       </div>
       <div class="top-row">
         <div class="first-row">
-          <div class="field">
+          <div class="field name-box">
             <label>Name</label>
             <input type="text" class="name" name="name" />
           </div>
-          <div class="field">
+          <div class="field alignment-box">
             <label>Alignment</label>
             <input type="text" class="alignment" name="alignment" readonly />
           </div>
         </div>
         <div class="second-row">
-          <div class="field">
+          <div class="field lineage-box">
             <label>Lineage</label>
             <input type="text" class="lineage" name="lineage" readonly />
           </div>
-          <div class="field">
+          <div class="field past-life-box">
             <label>Past Life</label>
             <input type="text" class="past-life" name="past-life" readonly />
           </div>
@@ -186,54 +189,54 @@
       <div class="stats-section">
         <div class="attributes">
           <div>
-            <label>Might</label>
+            <label>Might:</label>
             <input type="number" class="might" name="might" readonly />
           </div>
           <div>
-            <label>Agility</label>
+            <label>Agility:</label>
             <input type="number" class="agility" name="agility" readonly />
           </div>
           <div>
-            <label>Intellect</label>
+            <label>Intellect:</label>
             <input type="number" class="intellect" name="intellect" readonly />
           </div>
           <div>
-            <label>Spirit</label>
+            <label>Spirit:</label>
             <input type="number" class="spirit" name="spirit" readonly />
           </div>
         </div>
         <div class="derived-stats">
           <div>
-            <label>Initiative</label>
+            <label>Initiative:</label>
             <input type="text" class="initiative" name="initiative" readonly />
           </div>
           <div>
-            <label>Accuracy</label>
+            <label>Accuracy:</label>
             <input type="text" class="accuracy" name="accuracy" readonly />
           </div>
           <div>
-            <label>Guard (Agility + Armor)</label>
+            <label>Guard (Agility + Armor):</label>
             <input type="number" class="guard" name="guard" />
           </div>
           <div>
-            <label>Resist</label>
+            <label>Resist:</label>
             <input type="text" class="resist" name="resist" readonly />
           </div>
           <div>
-            <label>Prevail</label>
+            <label>Prevail:</label>
             <input type="text" class="prevail" name="prevail" readonly />
           </div>
           <div>
-            <label>Tenacity</label>
+            <label>Tenacity:</label>
             <input type="text" class="tenacity" name="tenacity" readonly />
           </div>
         </div>
-        <div class="skills-die">
-          <div>
+        <div class="skills-die-container">
+          <div class="skill-bonus-box">
             <label>Skill Bonus</label>
             <span>+1</span>
           </div>
-          <div>
+          <div class="skill-die-box">
             <label>Skill Die</label>
             <span>d6</span>
           </div>
@@ -244,23 +247,23 @@
           <label>Speed (5 + Agility)</label>
           <input type="number" class="speed" name="speed" readonly />
         </div>
-        <div class="carried-items">
-          <label>Carried Items (Equipment)</label>
-          <textarea class="carried-items-text" name="carried-items" rows="3"></textarea>
+        <div class="skills-section">
+          <label>Skills</label>
+          <textarea class="skills" name="skills" rows="3" readonly></textarea>
         </div>
       </div>
-      <div class="skills-section">
-        <label>Skills</label>
-        <textarea class="skills" name="skills" rows="3" readonly></textarea>
-        <div class="sparks-shadows">
-          <div class="sparks">
-            <label>Sparks</label>
-            <p>canny | quick | quiet | safe | striking</p>
-          </div>
-          <div class="shadows">
-            <label>Shadows</label>
-            <p>costly | slow | loud | harmful | daunting</p>
-          </div>
+      <div class="carried-items">
+        <label>Carried Items (Equipment)</label>
+        <textarea class="carried-items-text" name="carried-items" rows="3"></textarea>
+      </div>
+      <div class="sparks-shadows">
+        <div class="sparks">
+          <label>Sparks</label>
+          <p>canny | quick | quiet | safe | striking</p>
+        </div>
+        <div class="shadows">
+          <label>Shadows</label>
+          <p>costly | slow | loud | harmful | daunting</p>
         </div>
       </div>
       <div class="weapon-attack-static">
@@ -283,21 +286,21 @@
       </div>
       <div class="top-row">
         <div class="first-row">
-          <div class="field">
+          <div class="field name-box">
             <label>Name</label>
             <input type="text" class="name" name="name" />
           </div>
-          <div class="field">
+          <div class="field alignment-box">
             <label>Alignment</label>
             <input type="text" class="alignment" name="alignment" readonly />
           </div>
         </div>
         <div class="second-row">
-          <div class="field">
+          <div class="field lineage-box">
             <label>Lineage</label>
             <input type="text" class="lineage" name="lineage" readonly />
           </div>
-          <div class="field">
+          <div class="field past-life-box">
             <label>Past Life</label>
             <input type="text" class="past-life" name="past-life" readonly />
           </div>
@@ -312,54 +315,54 @@
       <div class="stats-section">
         <div class="attributes">
           <div>
-            <label>Might</label>
+            <label>Might:</label>
             <input type="number" class="might" name="might" readonly />
           </div>
           <div>
-            <label>Agility</label>
+            <label>Agility:</label>
             <input type="number" class="agility" name="agility" readonly />
           </div>
           <div>
-            <label>Intellect</label>
+            <label>Intellect:</label>
             <input type="number" class="intellect" name="intellect" readonly />
           </div>
           <div>
-            <label>Spirit</label>
+            <label>Spirit:</label>
             <input type="number" class="spirit" name="spirit" readonly />
           </div>
         </div>
         <div class="derived-stats">
           <div>
-            <label>Initiative</label>
+            <label>Initiative:</label>
             <input type="text" class="initiative" name="initiative" readonly />
           </div>
           <div>
-            <label>Accuracy</label>
+            <label>Accuracy:</label>
             <input type="text" class="accuracy" name="accuracy" readonly />
           </div>
           <div>
-            <label>Guard (Agility + Armor)</label>
+            <label>Guard (Agility + Armor):</label>
             <input type="number" class="guard" name="guard" />
           </div>
           <div>
-            <label>Resist</label>
+            <label>Resist:</label>
             <input type="text" class="resist" name="resist" readonly />
           </div>
           <div>
-            <label>Prevail</label>
+            <label>Prevail:</label>
             <input type="text" class="prevail" name="prevail" readonly />
           </div>
           <div>
-            <label>Tenacity</label>
+            <label>Tenacity:</label>
             <input type="text" class="tenacity" name="tenacity" readonly />
           </div>
         </div>
-        <div class="skills-die">
-          <div>
+        <div class="skills-die-container">
+          <div class="skill-bonus-box">
             <label>Skill Bonus</label>
             <span>+1</span>
           </div>
-          <div>
+          <div class="skill-die-box">
             <label>Skill Die</label>
             <span>d6</span>
           </div>
@@ -370,23 +373,23 @@
           <label>Speed (5 + Agility)</label>
           <input type="number" class="speed" name="speed" readonly />
         </div>
-        <div class="carried-items">
-          <label>Carried Items (Equipment)</label>
-          <textarea class="carried-items-text" name="carried-items" rows="3"></textarea>
+        <div class="skills-section">
+          <label>Skills</label>
+          <textarea class="skills" name="skills" rows="3" readonly></textarea>
         </div>
       </div>
-      <div class="skills-section">
-        <label>Skills</label>
-        <textarea class="skills" name="skills" rows="3" readonly></textarea>
-        <div class="sparks-shadows">
-          <div class="sparks">
-            <label>Sparks</label>
-            <p>canny | quick | quiet | safe | striking</p>
-          </div>
-          <div class="shadows">
-            <label>Shadows</label>
-            <p>costly | slow | loud | harmful | daunting</p>
-          </div>
+      <div class="carried-items">
+        <label>Carried Items (Equipment)</label>
+        <textarea class="carried-items-text" name="carried-items" rows="3"></textarea>
+      </div>
+      <div class="sparks-shadows">
+        <div class="sparks">
+          <label>Sparks</label>
+          <p>canny | quick | quiet | safe | striking</p>
+        </div>
+        <div class="shadows">
+          <label>Shadows</label>
+          <p>costly | slow | loud | harmful | daunting</p>
         </div>
       </div>
       <div class="weapon-attack-static">
@@ -409,21 +412,21 @@
       </div>
       <div class="top-row">
         <div class="first-row">
-          <div class="field">
+          <div class="field name-box">
             <label>Name</label>
             <input type="text" class="name" name="name" />
           </div>
-          <div class="field">
+          <div class="field alignment-box">
             <label>Alignment</label>
             <input type="text" class="alignment" name="alignment" readonly />
           </div>
         </div>
         <div class="second-row">
-          <div class="field">
+          <div class="field lineage-box">
             <label>Lineage</label>
             <input type="text" class="lineage" name="lineage" readonly />
           </div>
-          <div class="field">
+          <div class="field past-life-box">
             <label>Past Life</label>
             <input type="text" class="past-life" name="past-life" readonly />
           </div>
@@ -438,54 +441,54 @@
       <div class="stats-section">
         <div class="attributes">
           <div>
-            <label>Might</label>
+            <label>Might:</label>
             <input type="number" class="might" name="might" readonly />
           </div>
           <div>
-            <label>Agility</label>
+            <label>Agility:</label>
             <input type="number" class="agility" name="agility" readonly />
           </div>
           <div>
-            <label>Intellect</label>
+            <label>Intellect:</label>
             <input type="number" class="intellect" name="intellect" readonly />
           </div>
           <div>
-            <label>Spirit</label>
+            <label>Spirit:</label>
             <input type="number" class="spirit" name="spirit" readonly />
           </div>
         </div>
         <div class="derived-stats">
           <div>
-            <label>Initiative</label>
+            <label>Initiative:</label>
             <input type="text" class="initiative" name="initiative" readonly />
           </div>
           <div>
-            <label>Accuracy</label>
+            <label>Accuracy:</label>
             <input type="text" class="accuracy" name="accuracy" readonly />
           </div>
           <div>
-            <label>Guard (Agility + Armor)</label>
+            <label>Guard (Agility + Armor):</label>
             <input type="number" class="guard" name="guard" />
           </div>
           <div>
-            <label>Resist</label>
+            <label>Resist:</label>
             <input type="text" class="resist" name="resist" readonly />
           </div>
           <div>
-            <label>Prevail</label>
+            <label>Prevail:</label>
             <input type="text" class="prevail" name="prevail" readonly />
           </div>
           <div>
-            <label>Tenacity</label>
+            <label>Tenacity:</label>
             <input type="text" class="tenacity" name="tenacity" readonly />
           </div>
         </div>
-        <div class="skills-die">
-          <div>
+        <div class="skills-die-container">
+          <div class="skill-bonus-box">
             <label>Skill Bonus</label>
             <span>+1</span>
           </div>
-          <div>
+          <div class="skill-die-box">
             <label>Skill Die</label>
             <span>d6</span>
           </div>
@@ -496,23 +499,23 @@
           <label>Speed (5 + Agility)</label>
           <input type="number" class="speed" name="speed" readonly />
         </div>
-        <div class="carried-items">
-          <label>Carried Items (Equipment)</label>
-          <textarea class="carried-items-text" name="carried-items" rows="3"></textarea>
+        <div class="skills-section">
+          <label>Skills</label>
+          <textarea class="skills" name="skills" rows="3" readonly></textarea>
         </div>
       </div>
-      <div class="skills-section">
-        <label>Skills</label>
-        <textarea class="skills" name="skills" rows="3" readonly></textarea>
-        <div class="sparks-shadows">
-          <div class="sparks">
-            <label>Sparks</label>
-            <p>canny | quick | quiet | safe | striking</p>
-          </div>
-          <div class="shadows">
-            <label>Shadows</label>
-            <p>costly | slow | loud | harmful | daunting</p>
-          </div>
+      <div class="carried-items">
+        <label>Carried Items (Equipment)</label>
+        <textarea class="carried-items-text" name="carried-items" rows="3"></textarea>
+      </div>
+      <div class="sparks-shadows">
+        <div class="sparks">
+          <label>Sparks</label>
+          <p>canny | quick | quiet | safe | striking</p>
+        </div>
+        <div class="shadows">
+          <label>Shadows</label>
+          <p>costly | slow | loud | harmful | daunting</p>
         </div>
       </div>
       <div class="weapon-attack-static">

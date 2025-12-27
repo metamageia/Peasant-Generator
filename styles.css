@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700;900&display=swap');
+
 /* Basic resets */
 body {
     margin: 0;
@@ -9,6 +11,19 @@ body {
 /* Ensure all elements use border-box sizing */
 * {
     box-sizing: border-box;
+}
+
+/* Title Bar */
+.title-bar {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px;
+    margin: 0;
+    font-family: 'Cinzel', serif;
+    font-size: 3rem;
+    font-weight: 900;
+    letter-spacing: 0.1em;
 }
 
 /* Controls styling */
@@ -85,6 +100,7 @@ body {
     height: auto;
     font-size: var(--character-number-size);
     font-weight: 900;
+    font-family: 'Cinzel', serif;
     line-height: 1;
     pointer-events: none;
     user-select: none;
@@ -127,8 +143,26 @@ body {
     width: 100%;
     border-bottom: 2px solid #000;
     background: transparent;
-    text-transform: uppercase;
     font-weight: 700;
+}
+
+/* Add borders to alignment, lineage, and past life fields */
+.alignment-box,
+.lineage-box,
+.past-life-box,
+.name-box {
+    border: 2px solid #000;
+    padding: 8px;
+}
+
+.alignment-box input,
+.lineage-box input,
+.past-life-box input,
+.name-box input {
+    border: none !important;
+    background: transparent;
+    font-size: inherit;
+    font-weight: normal;
 }
 
 /* Hit Points Row */
@@ -170,13 +204,13 @@ body {
     grid-gap: 12px;
     margin-top: 10px;
 }
-.attributes, .derived-stats, .skills-die {
+.attributes, .derived-stats {
     border: 2px solid #000;
     padding: 8px;
     display: flex;
     flex-direction: column;
 }
-.attributes label, .derived-stats label, .skills-die label {
+.attributes label, .derived-stats label {
     font-weight: 900;
     font-size: 0.95rem;
     text-transform: uppercase;
@@ -203,8 +237,16 @@ body {
     border: 2px solid #000;
 }
 
-/* Make the skills/die small and compact */
-.skills-die {
+/* Skills Die Container - stacked vertically */
+.skills-die-container {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+/* Individual skill boxes */
+.skill-bonus-box,
+.skill-die-box {
     border: 2px solid #000;
     padding: 8px 6px;
     display: flex;
@@ -212,29 +254,36 @@ body {
     align-items: center;
     min-width: 100px; /* slightly larger for readability */
 }
-.skills-die > div {
+.skill-bonus-box label,
+.skill-die-box label {
+    font-weight: 900;
+    font-size: 0.95rem;
+    text-transform: uppercase;
     display: block;
     text-align: center;
     padding: 2px 0;
-    font-size: 0.95rem;
 }
-.skills-die span {
-    font-weight: 900;
+.skill-bonus-box span,
+.skill-die-box span {
+    font-weight: normal;
     display: block;
     font-size: 1.1rem;
+    text-align: center;
 }
 
 /* Speed & Carried Items */
 .speed-carried {
     grid-column: 1 / span 2;
     display: grid;
-    grid-template-columns: 100px 1fr;
+    grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
     margin-top: 10px;
 }
 .speed-field {
     display: flex;
     flex-direction: column;
+    border: 2px solid #000;
+    padding: 8px;
 }
 .speed-field label {
     font-weight: bold;
@@ -245,8 +294,12 @@ body {
     border: 2px solid #000;
 }
 .carried-items {
+    grid-column: 1 / span 2;
     display: flex;
     flex-direction: column;
+    border: 2px solid #000;
+    padding: 8px;
+    margin-top: 10px;
 }
 .carried-items label {
     font-weight: bold;
@@ -255,15 +308,18 @@ body {
     padding: 6px;
     width: 100%;
     resize: vertical;
-    border: 2px solid #000;
+    border: none;
+    background: transparent;
+    font-family: sans-serif;
+    font-size: 1rem;
 }
 
 /* Skills Section */
 .skills-section {
-    grid-column: 1 / span 2;
     display: flex;
     flex-direction: column;
-    margin-top: 10px;
+    border: 2px solid #000;
+    padding: 8px;
 }
 .skills-section label {
     font-weight: bold;
@@ -277,11 +333,15 @@ body {
 
 /* Sparks & Shadows */
 .sparks-shadows {
+    grid-column: 1 / span 2;
     display: flex;
     margin-top: 10px;
+    gap: 10px;
 }
 .sparks, .shadows {
-    margin-right: 20px;
+    flex: 1;
+    border: 2px solid #000;
+    padding: 8px;
 }
 .sparks label, .shadows label {
     font-weight: bold;
@@ -349,16 +409,10 @@ textarea[readonly] {
     font: inherit;
     color: inherit;
 }
-/* Keep guard input clean, but allow name to show its editable underline */
+/* Keep guard input clean */
 input.guard {
     border: none;
     background-color: transparent;
-}
-.top-row input.name {
-    border-bottom: 2px solid #000; /* ensure name shows as editable */
-    background: transparent;
-    text-transform: none;
-    font-weight: 700;
 }
 
 /* Hide spinner arrows for number fields that are readonly so they appear as text */
