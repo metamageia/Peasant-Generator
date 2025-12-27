@@ -6,10 +6,8 @@
   <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
-  <!-- Title Bar -->
   <div class="title-bar">COMMONERS</div>
 
-  <!-- Controls -->
   <div class="controls">
     <button id="randomize">Generate New Commoners</button>
     <button id="exportPDF">Export to PDF</button>
@@ -24,9 +22,7 @@
 
   </div>
   
-  <!-- Container for Four Sheets (2x2 grid) -->
   <div class="sheets-container">
-    <!-- Sheet 1 -->
     <div class="character-sheet">
       <div class="character-number-box">
         <input type="number" class="character-number" name="characterNumber" value="1" min="1" readonly />
@@ -152,7 +148,6 @@
       </div>
     </div>
     
-    <!-- Sheet 2 (same structure as Sheet 1) -->
     <div class="character-sheet">
       <div class="character-number-box">
         <input type="number" class="character-number" name="characterNumber" value="2" min="1" readonly />
@@ -278,7 +273,6 @@
       </div>
     </div>
     
-    <!-- Sheet 3 -->
     <div class="character-sheet">
       <div class="character-number-box">
         <input type="number" class="character-number" name="characterNumber" value="3" min="1" readonly />
@@ -404,7 +398,6 @@
       </div>
     </div>
     
-    <!-- Sheet 4 -->
     <div class="character-sheet">
       <div class="character-number-box">
         <input type="number" class="character-number" name="characterNumber" value="4" min="1" readonly />
@@ -531,7 +524,6 @@
     </div>
   </div>
   
-  <!-- Main JavaScript -->
   <script src="https://cdnjs.cloudflare.com/ajax/libs/html2pdf.js/0.10.1/html2pdf.bundle.min.js"></script>
   <script src="main.js"></script>
 </body>

@@ -1,9 +1,7 @@
-// Helper: Return a random element from an array
 function randomFromArray(arr) {
   return arr[Math.floor(Math.random() * arr.length)];
 }
 
-// Helper: Weighted random selection
 function weightedRandom(options) {
   let totalWeight = options.reduce((sum, opt) => sum + opt.weight, 0);
   let randomNum = Math.random() * totalWeight;
@@ -18,29 +16,24 @@ function weightedRandom(options) {
 
 let peasantData = null;
 
-// Fetch peasantData from the external JSON file
 function fetchPeasantData() {
   return fetch('commonerData.json')
       .then(response => response.json())
       .then(data => { peasantData = data; });
 }
 
-// Add this helper function to parse name templates
 function generateName(nameTemplate) {
-  // Replace syllable placeholders with actual syllables
   return nameTemplate.replace(/\[(.*?)\]/g, (match, type) => {
     return randomFromArray(peasantData[type]);
   });
 }
   
-// Generate a character for a given sheet element
 function generatePeasantForSheet(sheet) {
   if (!peasantData) {
     console.error("peasantData not loaded yet.");
     return;
   }
   
-  // --- Attribute Generation ---
   let baseAttributes = { "Might": 0, "Agility": 0, "Intellect": 0, "Spirit": 0 };
   const attributeKeys = ["Might", "Agility", "Intellect", "Spirit"];
   for (let i = 0; i < 4; i++) {
@@ -48,7 +41,6 @@ function generatePeasantForSheet(sheet) {
     baseAttributes[selected] += 1;
   }
   
-  // --- Alignment Generation with Duplicate Reroll ---
   const alignmentOption = weightedRandom(peasantData.alignment);
   const tokens = alignmentOption.name.split("&").map(t => t.trim());
   function rollToken(token) {
@@ -62,8 +54,6 @@ function generatePeasantForSheet(sheet) {
   }
   const alignmentString = firstValue + " & " + secondValue;
   
-  // --- Lineage Generation ---
-  // Safely check if the element exists before accessing its properties
   const lineageToggle = document.getElementById("lineageToggleCheckbox");
   const useLineageOption = lineageToggle && lineageToggle.checked;
   
@@ -74,12 +64,10 @@ function generatePeasantForSheet(sheet) {
   const lineageOption = weightedRandom(availableLineages);
   const lineage = lineageOption.name;
   
-  // --- Other Character Generation ---
   const nameTemplate = weightedRandom(peasantData.commonerName).name;
   const generatedName = generateName(nameTemplate);
   sheet.querySelector(".name").value = generatedName;
   
-  // Safely check if the element exists before accessing its properties
   const lineageRulesToggle = document.getElementById("lineageRulesToggle");
   const useLineageRules = lineageRulesToggle && lineageRulesToggle.checked;
   
@@ -108,7 +96,6 @@ function generatePeasantForSheet(sheet) {
   const maxHP = 5 + might;
   const speed = 5 + agility;
   
-  // Update fields on the sheet
   sheet.querySelector(".alignment").value = alignmentString;
   sheet.querySelector(".lineage").value = lineage;
   sheet.querySelector(".past-life").value = pastLife;
@@ -120,7 +107,6 @@ function generatePeasantForSheet(sheet) {
   
   sheet.querySelector(".initiative").value = initiative;
   sheet.querySelector(".accuracy").value = accuracy;
-  // Set default Guard equal to Agility
   sheet.querySelector(".guard").value = agility;
   sheet.querySelector(".resist").value = resist;
   sheet.querySelector(".prevail").value = prevail;
@@ -133,7 +119,6 @@ function generatePeasantForSheet(sheet) {
   sheet.querySelector(".skills").value = pastLifeEntry.skill;
   sheet.querySelector(".carried-items-text").value = pastLifeEntry.equipment;
   
-  // Update Lineage Talent based on the toggle.
   const lineageTalentContainer = sheet.querySelector('.lineage-talent');
   if (useLineageRules) {
     if (peasantData.lineageTalents && peasantData.lineageTalents[lineage]) {
@@ -147,17 +132,13 @@ function generatePeasantForSheet(sheet) {
   }
 }
 
-// Generate characters for all sheets
 function generatePeasant() {
   const sheets = document.querySelectorAll('.character-sheet');
   sheets.forEach(sheet => generatePeasantForSheet(sheet));
-  // After values are populated, enforce which fields are interactable
   enforceInteractivityRules();
-  // Keep the visual character-number displays in sync with the underlying inputs
   syncCharacterNumberDisplays();
 }
 
-// Keep `.character-number-display` elements updated from the hidden inputs
 function syncCharacterNumberDisplays() {
   const sheets = document.querySelectorAll('.character-sheet');
   sheets.forEach(sheet => {
@@ -167,32 +148,26 @@ function syncCharacterNumberDisplays() {
   });
 }
 
-// Measure and scale the display element so its text fits inside the parent box
 function fitCharacterNumberDisplay(display) {
   if (!display || !display.parentElement) return;
   const container = display.parentElement;
 
-  // Reset scale so we can measure natural size
   display.style.transform = 'translate(-50%, -50%) scale(1)';
 
-  // Compute available space inside the box (account for padding)
   const cs = window.getComputedStyle(container);
   const padX = parseFloat(cs.paddingLeft || 0) + parseFloat(cs.paddingRight || 0);
   const padY = parseFloat(cs.paddingTop || 0) + parseFloat(cs.paddingBottom || 0);
   const availableWidth = Math.max(4, container.clientWidth - padX);
   const availableHeight = Math.max(4, container.clientHeight - padY);
 
-  // Measure natural size of the text
   const textWidth = display.offsetWidth;
   const textHeight = display.offsetHeight;
 
-  // Determine scale to make the text fit both dimensions, but don't upscale beyond 1
   const scaleX = availableWidth / textWidth;
   const scaleY = availableHeight / textHeight;
   let scale = Math.min(scaleX, scaleY, 1);
   if (!isFinite(scale) || scale <= 0) scale = 1;
 
-  // Apply scale while preserving center translate
   display.style.transform = `translate(-50%, -50%) scale(${scale})`;
 }
 
@@ -201,7 +176,6 @@ function autoScaleCharacterNumberDisplays() {
   displays.forEach(display => fitCharacterNumberDisplay(display));
 }
 
-// Debounce helper for resize
 function debounce(fn, wait) {
   let t = null;
   return function(...args) {
@@ -210,39 +184,33 @@ function debounce(fn, wait) {
   };
 }
 
-// Keep the displays synced and scaled when values change or on resize
 const debouncedAutoScale = debounce(autoScaleCharacterNumberDisplays, 80);
 window.addEventListener('resize', debouncedAutoScale);
 
-// Update sync function to also scale after updating text
 const _origSyncCharacterNumberDisplays = syncCharacterNumberDisplays;
 syncCharacterNumberDisplays = function() {
   _origSyncCharacterNumberDisplays();
   autoScaleCharacterNumberDisplays();
 };
 
-// Make generated fields non-interactable (readOnly and removed from tab order)
-// except for HP and inventory which should remain editable.
 function enforceInteractivityRules() {
   const sheets = document.querySelectorAll('.character-sheet');
   sheets.forEach(sheet => {
     const fields = sheet.querySelectorAll('input, textarea');
     fields.forEach(el => {
-      // Allow editing for current HP, carried items, and the character name
       if (el.classList.contains('current-hp') || el.classList.contains('carried-items-text') || el.classList.contains('name')) {
         el.readOnly = false;
         el.removeAttribute('readonly');
         el.removeAttribute('tabindex');
       } else {
-        el.readOnly = true; // mark as read-only so values can't be changed
+        el.readOnly = true; 
         el.setAttribute('readonly', '');
-        el.setAttribute('tabindex', '-1'); // remove from tab order
+        el.setAttribute('tabindex', '-1'); 
       }
     });
   });
 }
 
-// Update Lineage Talent for all sheets when the toggle changes
 function updateLineageTalent() {
   const sheets = document.querySelectorAll('.character-sheet');
   sheets.forEach(sheet => {
@@ -264,7 +232,6 @@ function updateLineageTalent() {
   });
 }
 
-// Export to PDF
 function exportToPDF() {
   const element = document.querySelector('.sheets-container');
   const opt = {
@@ -300,7 +267,6 @@ function exportToPDF() {
   });
 }
 
-// Set up event listeners when the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", () => {
   fetchPeasantData()
     .then(() => {
@@ -324,7 +290,6 @@ document.addEventListener("DOMContentLoaded", () => {
         exportBtn.addEventListener("click", exportToPDF);
       }
       
-      // Generate initial peasants
       generatePeasant();
     })
     .catch(error => console.error("Error loading peasantData:", error));
