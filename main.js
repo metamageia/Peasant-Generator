@@ -153,7 +153,73 @@ function generatePeasant() {
   sheets.forEach(sheet => generatePeasantForSheet(sheet));
   // After values are populated, enforce which fields are interactable
   enforceInteractivityRules();
+  // Keep the visual character-number displays in sync with the underlying inputs
+  syncCharacterNumberDisplays();
 }
+
+// Keep `.character-number-display` elements updated from the hidden inputs
+function syncCharacterNumberDisplays() {
+  const sheets = document.querySelectorAll('.character-sheet');
+  sheets.forEach(sheet => {
+    const input = sheet.querySelector('.character-number');
+    const display = sheet.querySelector('.character-number-display');
+    if (input && display) display.textContent = input.value;
+  });
+}
+
+// Measure and scale the display element so its text fits inside the parent box
+function fitCharacterNumberDisplay(display) {
+  if (!display || !display.parentElement) return;
+  const container = display.parentElement;
+
+  // Reset scale so we can measure natural size
+  display.style.transform = 'translate(-50%, -50%) scale(1)';
+
+  // Compute available space inside the box (account for padding)
+  const cs = window.getComputedStyle(container);
+  const padX = parseFloat(cs.paddingLeft || 0) + parseFloat(cs.paddingRight || 0);
+  const padY = parseFloat(cs.paddingTop || 0) + parseFloat(cs.paddingBottom || 0);
+  const availableWidth = Math.max(4, container.clientWidth - padX);
+  const availableHeight = Math.max(4, container.clientHeight - padY);
+
+  // Measure natural size of the text
+  const textWidth = display.offsetWidth;
+  const textHeight = display.offsetHeight;
+
+  // Determine scale to make the text fit both dimensions, but don't upscale beyond 1
+  const scaleX = availableWidth / textWidth;
+  const scaleY = availableHeight / textHeight;
+  let scale = Math.min(scaleX, scaleY, 1);
+  if (!isFinite(scale) || scale <= 0) scale = 1;
+
+  // Apply scale while preserving center translate
+  display.style.transform = `translate(-50%, -50%) scale(${scale})`;
+}
+
+function autoScaleCharacterNumberDisplays() {
+  const displays = document.querySelectorAll('.character-number-display');
+  displays.forEach(display => fitCharacterNumberDisplay(display));
+}
+
+// Debounce helper for resize
+function debounce(fn, wait) {
+  let t = null;
+  return function(...args) {
+    clearTimeout(t);
+    t = setTimeout(() => fn.apply(this, args), wait);
+  };
+}
+
+// Keep the displays synced and scaled when values change or on resize
+const debouncedAutoScale = debounce(autoScaleCharacterNumberDisplays, 80);
+window.addEventListener('resize', debouncedAutoScale);
+
+// Update sync function to also scale after updating text
+const _origSyncCharacterNumberDisplays = syncCharacterNumberDisplays;
+syncCharacterNumberDisplays = function() {
+  _origSyncCharacterNumberDisplays();
+  autoScaleCharacterNumberDisplays();
+};
 
 // Make generated fields non-interactable (readOnly and removed from tab order)
 // except for HP and inventory which should remain editable.
@@ -162,8 +228,8 @@ function enforceInteractivityRules() {
   sheets.forEach(sheet => {
     const fields = sheet.querySelectorAll('input, textarea');
     fields.forEach(el => {
-      // Allow editing for current HP and carried items only
-      if (el.classList.contains('current-hp') || el.classList.contains('carried-items-text')) {
+      // Allow editing for current HP, carried items, and the character name
+      if (el.classList.contains('current-hp') || el.classList.contains('carried-items-text') || el.classList.contains('name')) {
         el.readOnly = false;
         el.removeAttribute('readonly');
         el.removeAttribute('tabindex');
