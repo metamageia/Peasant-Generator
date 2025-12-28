@@ -60,7 +60,8 @@ body {
 /* Character Number Box */
 .character-number-box {
     grid-column: 1;
-    grid-row: 1;
+    /* Make the number box span the full height of the sheet so all boxes are identical size */
+    grid-row: 1 / -1;
     display: flex;
     flex-direction: column;
     align-items: center;
