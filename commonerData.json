@@ -6,10 +6,10 @@
     { "name": "Orc", "weight": 1 }
   ],
   "lineageTalents": {
-    "Human": "Human Ingenuity: On the first maneuver you attempt each encounter, gain one extra spark on a success.",
-    "Elf": "Elven Tranquility: You gain an extra point of focus at the start of combat, for a total of INTELLECT + I. You gain this extra point even at first level. Once per combat encounter, when you make an accuracy check, you can spend a point of focus to add your skill die to the roll.",
-    "Dwarf": "Dwarven Resolve: You start each adventuring day with one point of resolve.",
-    "Orc": "The Curse of Ruin: Orcs are the unmakers of all things they touch. When you make a depletion check, the item depletes on a result of 1 to 3 instead of 1 to 2. When you make a check to destroy an object, you gain an extra spark on a success. When you deal damage with an attack, you may choose to reroll the lowest die.<br><br>Orchish Tenacity: The first time you are reduced to zero hit points each encounter, you automatically succeed on tenacity checks until the end of the round"
+    "Human": "Human Ingenuity: You can spark on prevail checks. When you do, for each spark, reduce another harmful state on the target by 1.",
+    "Elf": "Elven Tranquility: You gain an extra point of focus at the start of combat, for a total of INTELLECT + I. You gain this extra point even as a 0th- level commoner. As a commoner, you can spend it when you make an attack to add a +2 bonus to your accuracy check.",
+    "Dwarf": "Dwarven Resolve: After a night's rest, gain 1 resolve.",
+    "Orc": "The Curse of Ruin: When you make a depletion check, the item depletes on a result of 1 to 3 instead of 1 to 2. When you deal damage with an attack, you may choose to reroll the lowest die."
   },
 
 "commonerName": [
