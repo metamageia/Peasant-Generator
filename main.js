@@ -88,10 +88,10 @@ function generatePeasantForSheet(sheet) {
   const intellect = baseAttributes.Intellect + (abilityBonus.Intellect || 0);
   const spirit = baseAttributes.Spirit + (abilityBonus.Spirit || 0);
   
-  const initiative = agility + 1;
-  const accuracy = 1 + Math.max(agility, might);
-  const resist = spirit + 1;
-  const prevail = intellect + 1;
+  const initiative = agility + 2;
+  const accuracy = 2 + Math.max(agility, might);
+  const resist = spirit + 2;
+  const prevail = intellect + 2;
   const maxHP = 5 + might;
   const speed = 5;
   
