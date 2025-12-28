@@ -135,7 +135,6 @@ body {
 .top-row label {
     font-weight: 900;
     font-size: 0.85em;
-    text-transform: uppercase;
     letter-spacing: 0.06em;
 }
 .top-row input {
@@ -213,7 +212,6 @@ body {
 .attributes label, .derived-stats label {
     font-weight: 900;
     font-size: 0.95rem;
-    text-transform: uppercase;
 }
 .attributes div {
     display: flex;
@@ -261,14 +259,14 @@ body {
 .skill-die-box label {
     font-weight: 900;
     font-size: 0.95rem;
-    text-transform: uppercase;
     display: block;
     text-align: left;
     padding: 2px 0;
 }
 .skill-bonus-box span,
 .skill-die-box span {
-    font-weight: 700;
+    /* Make the numeric/value text not bold to match other labels */
+    font-weight: 400;
     display: block;
     font-size: 1.1rem;
     text-align: center;
@@ -278,7 +276,7 @@ body {
 .speed-carried {
     grid-column: 1 / span 2;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
     grid-gap: 10px;
     margin-top: 10px;
 }
@@ -295,6 +293,32 @@ body {
     padding: 6px;
     width: 100%;
     border: 2px solid #000;
+}
+
+/* Speed box when shown on the skills row */
+.speed-box {
+    border: 2px solid #000;
+    padding: 8px 12px;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 8px;
+    flex: 0 0 120px; /* keep a compact width */
+}
+.speed-box label {
+    /* Match the appearance of other stat box labels */
+    font-weight: 900;
+    font-size: 0.95rem;
+    display: block;
+    text-align: left;
+    padding: 2px 0;
+}
+.speed-box input {
+    padding: 6px;
+    width: 56px;
+    border: 2px solid #000;
+    text-align: center;
+    font-weight: 900;
 }
 .carried-items {
     grid-column: 1 / span 2;
