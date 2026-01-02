@@ -64,16 +64,14 @@ function generatePeasantForSheet(sheet) {
   const lineageOption = weightedRandom(availableLineages);
   const lineage = lineageOption.name;
   
+  const nameTemplate = weightedRandom(peasantData.commonerName).name;
+  const generatedName = generateName(nameTemplate);
+  const nameInput = sheet.querySelector(".name");
+  nameInput.dataset.generatedName = generatedName;
+  
   const characterNamesToggle = document.getElementById("characterNamesToggle");
   const useCharacterNames = characterNamesToggle && characterNamesToggle.checked;
-  
-  if (useCharacterNames) {
-    const nameTemplate = weightedRandom(peasantData.commonerName).name;
-    const generatedName = generateName(nameTemplate);
-    sheet.querySelector(".name").value = generatedName;
-  } else {
-    sheet.querySelector(".name").value = "";
-  }
+  nameInput.value = useCharacterNames ? generatedName : "";
   
   const lineageRulesToggle = document.getElementById("lineageRulesToggle");
   const useLineageRules = lineageRulesToggle && lineageRulesToggle.checked;
@@ -135,6 +133,20 @@ function generatePeasantForSheet(sheet) {
   } else {
     lineageTalentContainer.style.display = 'none';
   }
+}
+
+function toggleCharacterNames() {
+  const characterNamesToggle = document.getElementById("characterNamesToggle");
+  const showNames = characterNamesToggle && characterNamesToggle.checked;
+  const sheets = document.querySelectorAll('.character-sheet');
+  sheets.forEach(sheet => {
+    const nameInput = sheet.querySelector(".name");
+    if (showNames && nameInput.dataset.generatedName) {
+      nameInput.value = nameInput.dataset.generatedName;
+    } else {
+      nameInput.value = "";
+    }
+  });
 }
 
 function generatePeasant() {
@@ -283,6 +295,11 @@ document.addEventListener("DOMContentLoaded", () => {
       const lineageRulesToggle = document.getElementById("lineageRulesToggle");
       if (lineageRulesToggle) {
         lineageRulesToggle.addEventListener("change", updateLineageTalent);
+      }
+      
+      const characterNamesToggle = document.getElementById("characterNamesToggle");
+      if (characterNamesToggle) {
+        characterNamesToggle.addEventListener("change", toggleCharacterNames);
       }
       
       const lineageToggle = document.getElementById("lineageToggleCheckbox");
