@@ -172,7 +172,7 @@
         "name": "Arsonist",
         "abilityBonus": { "Intellect": 1 },
         "skill": "Athletics",
-        "equipment": "firebomb (deals 3d6 damage in a spread 2)"
+        "equipment": "crude sword (1d6)"
       },
       {
         "name": "Drunkard",
