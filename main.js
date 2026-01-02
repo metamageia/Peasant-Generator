@@ -64,9 +64,16 @@ function generatePeasantForSheet(sheet) {
   const lineageOption = weightedRandom(availableLineages);
   const lineage = lineageOption.name;
   
-  const nameTemplate = weightedRandom(peasantData.commonerName).name;
-  const generatedName = generateName(nameTemplate);
-  sheet.querySelector(".name").value = generatedName;
+  const characterNamesToggle = document.getElementById("characterNamesToggle");
+  const useCharacterNames = characterNamesToggle && characterNamesToggle.checked;
+  
+  if (useCharacterNames) {
+    const nameTemplate = weightedRandom(peasantData.commonerName).name;
+    const generatedName = generateName(nameTemplate);
+    sheet.querySelector(".name").value = generatedName;
+  } else {
+    sheet.querySelector(".name").value = "";
+  }
   
   const lineageRulesToggle = document.getElementById("lineageRulesToggle");
   const useLineageRules = lineageRulesToggle && lineageRulesToggle.checked;
